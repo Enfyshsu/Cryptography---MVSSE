@@ -5,5 +5,3 @@
 1. normal SSE
 2. RSA accumulator
 
-## Part 2
-
