@@ -2,6 +2,7 @@ import hmac
 import hashlib
 import binascii
 from .prime import gen_large_prime
+from .aesCipher import AESCipher
 
 # Reference: https://stackoverflow.com/questions/39767297/how-to-use-sha256-hmac-in-python-code
 def prf1(key, m, p):
@@ -19,9 +20,14 @@ def prf1(key, m, p):
     
     return int(H, 16) % p
 
+def prf2(key, m):
+    AES = AESCipher(key)
+    return AES.encrypt(m)
+
 def main():
-    p = gen_large_prime(1024)
-    prf1("E49756B4C8FAB4E48222A3E7F3B97CC3", "This is test", p)
+    #p = gen_large_prime(1024)
+    #prf1("E49756B4C8FAB4E48222A3E7F3B97CC3", "This is test", p)
+    print(prf2("this is k2", "This is content bvhudbefwiovhbefiwvbefiwjvbjoefwbvijewfbvhuefwbvdfjksbverbivhwerbvjipdbvkerbipvbfeviebrvjiebrvfjkebvewkmrbvjifbavdmvbnejrnnvbcefjbvei"))
 
 if __name__ == "__main__":
     main()
