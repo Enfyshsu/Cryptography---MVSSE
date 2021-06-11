@@ -45,12 +45,12 @@ def is_prime(n):
     return miller_rabin(n)
 
 def gen_large_prime(bits):
-    cnt = 0
+    #cnt = 0
     while True:
         num = secrets.randbelow(pow(2, bits))
-        cnt += 1
+        #cnt += 1
         if is_prime(num):
-            print("count is ", cnt)
+            #print("count is ", cnt)
             return num
 
 def gen_two_large_prime(bits):
