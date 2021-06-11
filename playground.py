@@ -14,9 +14,9 @@ def encryptContent(documentList):
     return encryptList
 
 def main():
-    documentList = ["apple banana", "cat cake", "dog"]
-    encryptList = encryptContent(documentList)
-    print(encryptList)   
+    # documentList = ["apple banana", "cat cake", "dog"]
+    # encryptList = encryptContent(documentList)
+    # print(encryptList)   
     
 
 if __name__ == '__main__':
