@@ -53,6 +53,14 @@ def gen_large_prime(bits):
             print("count is ", cnt)
             return num
 
+def gen_two_large_prime(bits):
+    p = gen_large_prime(bits)
+    while True:
+        q = gen_large_prime(bits)
+        while q != p:
+            return p, q
+
+
 def main():
     
     bits = int(input())
