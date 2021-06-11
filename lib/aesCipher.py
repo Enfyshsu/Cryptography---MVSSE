@@ -27,3 +27,14 @@ class AESCipher(object):
     @staticmethod
     def _unpad(s):
         return s[:-ord(s[len(s)-1:])]
+
+def main():
+    obj = AESCipher("abc")  
+    enObj = obj.encrypt("haha")
+    print(enObj)
+    deObj = obj.decrypt(enObj)
+    print(deObj)
+    
+
+if __name__ == '__main__':
+    main()
