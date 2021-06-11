@@ -1,7 +1,12 @@
 from Crypto.Cipher import AES
 # from Crypto.Hash import MD5
 
-key = b'Q\xbd/\xddr c=\x12\xb9|\xd7%y\xe9\xbb\xdd6Q\xd5\x8a\xfc\x1f\x9d<s\x97r"\x178L'
+KEY_PATH = "./masterkey"
+
+def read_masterkey():
+    master_key = open(KEY_PATH).read().strip()
+    return master_key
+
 
 def encryptContent(documentList):
     encryptList = []
@@ -14,9 +19,10 @@ def encryptContent(documentList):
     return encryptList
 
 def main():
-    documentList = ["apple banana", "cat cake", "dog"]
-    encryptList = encryptContent(documentList)
-    print(encryptList)   
+    #documentList = ["apple banana", "cat cake", "dog"]
+    #encryptList = encryptContent(documentList)
+    #print(encryptList)   
+    read_masterkey()
     
 
 if __name__ == '__main__':
