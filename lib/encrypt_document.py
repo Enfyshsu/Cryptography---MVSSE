@@ -1,4 +1,4 @@
-from Crypto.Cipher import AES
+from .aesCipher import AESCipher
 # from Crypto.Hash import MD5
 
 KEY_PATH = "./masterkey"
@@ -9,20 +9,29 @@ def read_masterkey():
 
 
 def encryptContent(documentList):
+    master_key = read_masterkey()
+    AES = AESCipher(master_key)
+    
     encryptList = []
-    for document in documentList:
-        pad = lambda s: s + (16 - len(s)%16) * chr(16 - len(s)%16)
-        document = pad(document)
-        cipher = AES.new(key, AES.MODE_ECB)
-        cipheredDoc = cipher.encrypt(document)
-        encryptList.append(cipheredDoc)
-    return encryptList
+    for doc in documentList:
+        cipher = {}
+        cipher["id"] = doc["id"]
+        cipher['ciphertext'] = AES.encrypt(doc['content'])
+        encryptList.append(cipher)
 
+    return encryptList
+    
+    
 def main():
-    #documentList = ["apple banana", "cat cake", "dog"]
-    #encryptList = encryptContent(documentList)
-    #print(encryptList)   
-    read_masterkey()
+    documentList = [{"id": "0", "content": "apple banana"}, {"id": "1", "content": "cat cake"}, {"id": "2", "content": "dog"}]
+    encryptList = encryptContent(documentList)
+    print(encryptList)  
+
+    master_key = read_masterkey()
+    AES = AESCipher(master_key)
+    for c in encryptList:
+        print(AES.decrypt(c['ciphertext']))
+    #read_masterkey()
     
 
 if __name__ == '__main__':
