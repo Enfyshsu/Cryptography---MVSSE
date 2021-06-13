@@ -1,6 +1,7 @@
 import hashlib
 from .prime import gen_large_prime, gen_two_large_prime
 from .generator import generators
+import time
 
 '''
 p, q are 512 bits safe prime
@@ -16,7 +17,7 @@ def accumulate(primeList, N):
     exp = 1
     for prime in primeList:
         exp *= prime
-    accE = v ** exp % N
+    accE = pow(v, exp, N)
     return accE 
 
 def verify(piJ, j, accE, N):
@@ -39,7 +40,7 @@ def main():
     # print(ver)
     # m = hashFn("haha")
     # print(len(m), m)
-    print(generators(p*q))
+    
 
 if __name__ == '__main__':
     main()
