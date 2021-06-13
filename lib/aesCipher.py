@@ -13,12 +13,14 @@ class AESCipher(object):
         raw = self._pad(raw)
         iv = Random.new().read(AES.block_size)
         cipher = AES.new(self.key, AES.MODE_CBC, iv)
-        return base64.b64encode(iv + cipher.encrypt(raw.encode()))
+        #return base64.b64encode(iv + cipher.encrypt(raw.encode()))
+        return iv + cipher.encrypt(raw.encode())
 
     def decrypt(self, enc):
-        enc = base64.b64decode(enc)
+        #enc = base64.b64decode(enc)
         iv = enc[:AES.block_size]
         cipher = AES.new(self.key, AES.MODE_CBC, iv)
+        #return self._unpad(cipher.decrypt(enc[AES.block_size:])).decode('utf-8')
         return self._unpad(cipher.decrypt(enc[AES.block_size:])).decode('utf-8')
 
     def _pad(self, s):
@@ -30,7 +32,7 @@ class AESCipher(object):
 
 def main():
     obj = AESCipher("abc")  
-    enObj = obj.encrypt("haha")
+    enObj = obj.encrypt("This is \n data \n hahaha\n")
     print(enObj)
     deObj = obj.decrypt(enObj)
     print(deObj)
