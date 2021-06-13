@@ -26,14 +26,15 @@ def main():
         if words[w] >=5 and words[w] <= 10:
             keyword.append(w)
             cnt += 1
-    
+    keyword = read_json("keyword_list.json")
     for d in data:
         d['keywords'] = []
         for w in keyword:
             if w in d['content']:
                 d['keywords'].append(w)
-    write_json("keyword_list.json", keyword) 
-    #write_json(file_name, data)
+    keyword.sort()
+    #write_json("keyword_list.json", keyword) 
+    write_json(file_name, data)
     
 if __name__ == '__main__':
     main()

@@ -3,96 +3,84 @@
         "id": "0",
         "content": "SDN technology is currently available for industrial control applications that require extremely fast failover, called Operational Technology (OT) Software Defined Networking (SDN).  OT SDN technology is an approach to manage network access control and Ethernet packet delivery on environmentally hardened hardware for critical infrastructure networks. OT SDN abstracts the management of the control plane from the switches centralizing it in the flow controller and applies SDN as the underlay control plane in the switch. The legacy control plane is removed simplifying the switch while centralizing the control plane management. The common control plane standard used in OT SDN is OpenFlow making it interoperable with other SDN solutions with the difference being that OpenFlow is the only control plane in the switch and that the switch retains flows through power cycles and all flows and redundancy are proactively traffic engineered so the switches can perform the forwarding they are configured to perform with or without the flow controller online. OT SDN provides advantages for industrial networks in the form of performance, cybersecurity and situational awareness. Performance advantages are achieved through proactively traffic engineering contingencies using Fast Failover groups in OpenFlow resulting in network healing from link or switch failures in microseconds not milliseconds like spanning tree technology.  Another performance advantage is that loop mitigation is done through traffic engineered path planning and not blocked ports allowing the system owner to actively use all ports. Cybersecurity advantages of OT SDN is that the switches are deny by default and flows are the rules that allow traffic to be forwarded. This provides strong network access control where packets can be inspected from layer 1 through layer 4 of the OSI model at each hop. Legacy control plane security vulnerabilities are removed since the legacy control plane no longer exists. MAC table spoofing and BPDU spoofing are no longer possible because neither exist in the OT SDN switches. Pivoting and network reconnaissance no longer work with proper flow programming as only allowed traffic is approved to be forwarded combining the physical location and path with the virtual packet filtering. Situational awareness advantages of OT SDN provide the network owner with the visibility to what devices are on their network and what conversations can and are happening and who those conversations can happen between.  OT SDN network technology allows Ethernet networks to meet the demanding communication message exchange requirements of measurement and control for critical infrastructure and simply provides the system owner control over what devices can connect to the network, where those devices can connect, and what conversations each device can have.",
         "keywords": [
-            "available",
-            "industrial",
-            "applications",
-            "require",
-            "called",
-            "approach",
-            "Ethernet",
-            "hardware",
-            "management",
-            "switches",
-            "flow",
-            "controller",
-            "legacy",
-            "while",
-            "common",
-            "standard",
-            "OpenFlow",
-            "making",
-            "flows",
-            "proactively",
-            "traffic",
-            "so",
-            "perform",
-            "provides",
-            "advantages",
-            "form",
-            "performance",
-            "link",
-            "like",
-            "ports",
-            "owner",
-            "allow",
-            "where",
             "1",
-            "model",
-            "longer",
-            "possible",
-            "because",
-            "work",
+            "Ethernet",
+            "OpenFlow",
+            "advantages",
+            "allow",
             "allowed",
-            "physical",
-            "location",
-            "what",
-            "devices",
-            "conversations",
-            "who",
-            "those",
             "allows",
-            "exchange",
-            "connect",
-            "device",
-            "port",
-            "per",
-            "very",
             "application",
-            "An",
-            "I",
+            "applications",
+            "approach",
+            "available",
+            "because",
+            "called",
+            "common",
+            "connect",
+            "controller",
+            "conversations",
+            "device",
+            "devices",
+            "exchange",
+            "flow",
+            "flows",
+            "form",
+            "hardware",
+            "industrial",
+            "legacy",
+            "like",
+            "link",
+            "location",
+            "longer",
+            "making",
+            "management",
+            "model",
             "out",
-            "do"
+            "owner",
+            "per",
+            "perform",
+            "performance",
+            "physical",
+            "port",
+            "ports",
+            "possible",
+            "proactively",
+            "provides",
+            "require",
+            "standard",
+            "switches",
+            "traffic",
+            "what",
+            "where",
+            "while",
+            "who",
+            "work"
         ]
     },
     {
         "id": "1",
         "content": "ADSL quickly replaced ISDN as the customer-facing solution for last-mile connectivity. ISDN has largely disappeared on the customer side, remaining in use only in niche roles like dedicated teleconferencing systems and similar legacy systems.",
         "keywords": [
-            "legacy",
-            "so",
-            "like",
             "connect",
-            "systems",
             "large",
-            "I"
+            "legacy",
+            "like",
+            "systems"
         ]
     },
     {
         "id": "2",
         "content": "Several different information sources may provide information about a route to a given destination, but the router must select the \"best\" route to install into the routing table. In some cases, there may be multiple routes of equal \"quality\", and the router may install all of them and load-share across them.",
         "keywords": [
-            "so",
+            "cases",
+            "destination",
             "form",
             "information",
-            "about",
-            "destination",
-            "router",
-            "must",
-            "cases",
-            "there",
             "multiple",
-            "I",
-            "out"
+            "must",
+            "out",
+            "router"
         ]
     },
     {
@@ -100,281 +88,249 @@
         "content": "Segmentation involves the use of a switch to split a larger collision domain into smaller ones in order to reduce collision probability and to improve overall network throughput. In the extreme case (i.e. micro-segmentation), each device is located on a dedicated switch port. In contrast to an Ethernet hub, there is a separate collision domain on each of the switch ports. This allows computers to have dedicated bandwidth on point-to-point connections to the network and also to run in full-duplex mode. Full-duplex mode has only one transmitter and one receiver per collision domain, making collisions impossible.",
         "keywords": [
             "Ethernet",
-            "making",
-            "so",
-            "ports",
             "allow",
-            "possible",
-            "work",
             "allows",
+            "computer",
             "connect",
             "device",
-            "there",
-            "port",
-            "per",
             "large",
-            "I",
+            "making",
+            "per",
+            "port",
+            "ports",
+            "possible",
             "small",
-            "do",
-            "computer"
+            "work"
         ]
     },
     {
         "id": "4",
         "content": "For the fiscal year 2018, Cisco reported earnings of US$0.1 billion, with an annual revenue of US$49.3 billion, an increase of 2.8% over the previous fiscal cycle. Cisco's shares traded at over $43 per share, and its market capitalization was valued at US$213.2 billion in September 2018. Low Net Income for fiscal year 2018 was attributed to a one-time tax charge, that allowed Cisco to bring back capital from overseas. Cisco used this money it was able to bring back at a lower tax rate to fund share buybacks and acquisitions.",
         "keywords": [
-            "allow",
             "1",
+            "allow",
             "allowed",
-            "port",
-            "per",
-            "For",
-            "year",
-            "billion",
             "back",
-            "I"
+            "billion",
+            "per",
+            "port",
+            "year"
         ]
     },
     {
         "id": "5",
         "content": "Initially, network virtualization only involved the separation of the control plane and the forwarding plane (management and packet transmission) within networking devices like switches. This has shifted to include the totality of virtualizing a network, including how the network is programmed, administered, and deployed, be it hardware, software, or management and packet transmission.",
         "keywords": [
-            "hardware",
-            "management",
-            "switches",
-            "so",
-            "like",
-            "work",
-            "devices",
             "device",
+            "devices",
+            "hardware",
+            "including",
+            "like",
+            "management",
+            "software",
+            "switches",
             "transmission",
             "within",
-            "including",
-            "software",
-            "I"
+            "work"
         ]
     },
     {
         "id": "6",
         "content": "WANs were very important for the development of networking technologies in general and were for a long time the most important application of networks both for military and enterprise applications. The ability to communicate data over large distances was one of the main driving factors for the development of data communications technologies, as it made it possible to overcome the distance limitations, as well as shortening the time necessary to exchange messages with other parties.",
         "keywords": [
-            "applications",
-            "possible",
-            "work",
-            "exchange",
-            "port",
-            "very",
-            "general",
-            "most",
             "application",
+            "applications",
             "both",
-            "large",
             "communications",
-            "well",
+            "exchange",
+            "general",
+            "large",
+            "most",
             "necessary",
-            "part"
+            "part",
+            "port",
+            "possible",
+            "well",
+            "work"
         ]
     },
     {
         "id": "7",
         "content": "Wow, if this is Nick Feamster, author of \"The Road to SDN: An intellectual history...\", I really like y'all's paper! I think that the perspective of SDN as one application of programmable network is important to the continuity of SDN research momentum, and including links to Active Networking will help, as you say, bring this research full circle.  Please, crack away. :D",
         "keywords": [
-            "link",
-            "like",
-            "work",
-            "port",
-            "per",
-            "including",
             "application",
-            "An",
-            "I",
-            "research"
+            "including",
+            "like",
+            "link",
+            "per",
+            "port",
+            "research",
+            "work"
         ]
     },
     {
         "id": "8",
         "content": "Wow, if this is Nick Feamster, author of \"The Road to SDN: An intellectual history...\", I really like y'all's paper! I think that the perspective of SDN as one application of programmable network is important to the continuity of SDN research momentum, and including links to Active Networking will help, as you say, bring this research full circle.  Please, crack away. :D",
         "keywords": [
-            "link",
-            "like",
-            "work",
-            "port",
-            "per",
-            "including",
             "application",
-            "An",
-            "I",
-            "research"
+            "including",
+            "like",
+            "link",
+            "per",
+            "port",
+            "research",
+            "work"
         ]
     },
     {
         "id": "9",
         "content": "The ONF launched a continuous certification program for products and equipment in the telecom and networking space. As part of certification, the Open Compute Project (OCP) is collaborating with ONF in this new program to promote the use of OCP-recognized open hardware in ONF solutions.",
         "keywords": [
-            "hardware",
-            "so",
-            "work",
-            "equipment",
-            "space",
-            "As",
-            "part",
             "Project",
-            "new"
+            "equipment",
+            "hardware",
+            "new",
+            "part",
+            "space",
+            "work"
         ]
     },
     {
         "id": "10",
         "content": "Avaya enterprise customers include: Apple, AT&T, Dell, CVS Health, Liberty Mutual Insurance, Disney, Comcast, Walmart, Deutsche Telekom, Lloyds Banking Group, Standard Chartered Bank, Michigan State University, UC Berkeley, U.S. House of Representatives",
-        "keywords": [
-            "I"
-        ]
+        "keywords": []
     },
     {
         "id": "11",
         "content": "Shortest Path Bridging - VID (SPBV) and Shortest Path Bridging - MAC (SPBM) are two operating modes of 802.1aq, and are described in more detail below.  Both inherit key benefits of link state routing:",
         "keywords": [
-            "link",
             "1",
-            "per",
-            "I",
             "key",
-            "out"
+            "link",
+            "out",
+            "per"
         ]
     },
     {
         "id": "12",
         "content": "As it is easy to generate MD5 collisions, it is possible for the person who created the file to create a second file with the same checksum, so this technique cannot protect against some forms of malicious tampering. In some cases, the checksum cannot be trusted (for example, if it was obtained over the same channel as the downloaded file), in which case MD5 can only provide error-checking functionality: it will recognize a corrupt or incomplete download, which becomes more likely when downloading larger files.",
         "keywords": [
-            "so",
-            "form",
-            "like",
-            "possible",
-            "who",
-            "cases",
-            "per",
-            "large",
-            "I",
-            "As",
             "cannot",
-            "example",
+            "cases",
             "channel",
+            "example",
+            "form",
             "function",
-            "do"
+            "large",
+            "like",
+            "per",
+            "possible",
+            "who"
         ]
     },
     {
         "id": "13",
         "content": "The vulnerable hashing functions work by taking the input message, and using it to transform an internal state.  After all of the input has been processed, the hash digest is generated by outputting the internal state of the function.  It is possible to reconstruct the internal state from the hash digest, which can then be used to process the new data.  In this way, one may extend the message and compute the hash that is a valid signature for the new message.",
         "keywords": [
-            "form",
-            "possible",
-            "work",
-            "I",
-            "new",
-            "functions",
-            "input",
-            "hash",
-            "function",
-            "It",
-            "output",
             "end",
-            "out"
+            "form",
+            "function",
+            "functions",
+            "hash",
+            "input",
+            "new",
+            "out",
+            "output",
+            "possible",
+            "work"
         ]
     },
     {
         "id": "14",
         "content": "Hash functions and their associated hash tables are used in data storage and retrieval applications to access data in a small and nearly constant time per retrieval, and require an amount of storage space only fractionally greater than the total space required for the data or records themselves.  Hashing is a computationally and storage space efficient form of data access which avoids the non-linear access time of ordered and unordered lists and structured trees, and the often exponential storage requirements of direct access of state spaces of large or variable-length keys.",
         "keywords": [
-            "applications",
-            "require",
-            "so",
-            "form",
-            "per",
             "application",
-            "large",
-            "space",
-            "key",
+            "applications",
+            "early",
+            "form",
+            "function",
             "functions",
             "hash",
-            "function",
-            "small",
-            "than",
-            "record",
+            "key",
+            "large",
             "length",
-            "early"
+            "per",
+            "record",
+            "require",
+            "small",
+            "space"
         ]
     },
     {
         "id": "15",
         "content": "Both physical and logical integrity often share many common challenges such as human errors and design flaws, and both must appropriately deal with concurrent requests to record and retrieve data, the latter of which is entirely a subject on its own.",
         "keywords": [
-            "common",
-            "physical",
-            "must",
             "both",
-            "integrity",
+            "common",
             "design",
-            "requests",
+            "integrity",
+            "must",
+            "physical",
             "record",
-            "request"
+            "request",
+            "requests"
         ]
     },
     {
         "id": "16",
         "content": "Even though some proofs of complexity-theoretic theorems regularly assume some concrete choice of input encoding, one tries to keep the discussion abstract enough to be independent of the choice of encoding. This can be achieved by ensuring that different representations can be transformed into each other efficiently.",
         "keywords": [
-            "so",
+            "end",
             "form",
-            "input",
-            "end"
+            "input"
         ]
     },
     {
         "id": "17",
         "content": "A compression function mixes two fixed length inputs and produces a single fixed length output of the same size as one of the inputs. This can also be seen as that the compression function transforms one large fixed-length input into a shorter, fixed-length output.",
         "keywords": [
-            "so",
-            "form",
-            "large",
-            "input",
-            "function",
             "fixed",
+            "form",
+            "function",
+            "input",
+            "large",
             "length",
-            "single",
+            "out",
             "output",
-            "out"
+            "single"
         ]
     },
     {
         "id": "18",
         "content": "The original RIPEMD, as well as RIPEMD-128, is not considered secure because 128-bit result is too small and also (for the original RIPEMD) because of design weaknesses. The 256- and 320-bit versions of RIPEMD provide the same level of security as RIPEMD-128 and RIPEMD-160, respectively; they are designed for applications where the security level is sufficient but longer hash result is necessary.",
         "keywords": [
-            "applications",
-            "so",
-            "where",
             "1",
-            "longer",
-            "because",
             "application",
-            "well",
-            "necessary",
-            "I",
-            "hash",
-            "small",
+            "applications",
+            "because",
             "design",
+            "designed",
+            "hash",
+            "longer",
+            "necessary",
             "original",
             "secure",
+            "small",
             "versions",
-            "designed"
+            "well",
+            "where"
         ]
     },
     {
         "id": "19",
         "content": "ADN-ZB/SNB/ II. Weltkrieg 1939-45\nDie Stalingrader Schlacht begann im Juli 1942.\nIn erbitterten, beiderseits verlustreichen K\u00e4mpfen wehrte die Rote Armee das weitere Vordringen der faschistischen Truppen ab. W\u00e4hrend der sowjetischen Gegenoffensive im November 1942 wurden \u00fcber 300 000 Mann eingeschlossen. Die Reste dieser Verb\u00e4nde, etwa 91 000 Mann, kapitulierten am 31.1. und 2.2.1943\nMit einer roten Fahne (r.), die sie am h\u00f6chsten Punkt befestigen wollen, st\u00fcrmen Rotarmisten eine Ruine am zentralen Platz in Stalingrad.\nZentralbild\nII. Weltkrieg 1939-1945",
         "keywords": [
-            "so",
             "1",
-            "I",
             "1942",
             "end"
         ]
@@ -383,52 +339,39 @@
         "id": "20",
         "content": "Development during the inter-war period was severely hampered by a lack of money and it was eventually decided to build a new design from existing 18-pounders by converting barrels but designing a new barrel and carriage for production when funds were available. The result was a 3.45 inches (87.6\u00a0mm) weapon firing a shell weighing 25 pounds (11.3\u00a0kg). It was mounted on late model 18-pounder carriages. One of these used a circular firing platform and this was adopted for the new guns. The firing platform was attached to the gun and when lowered the gun was pulled onto it. This platform transferred most of the recoil forces to the ground, instead of using the spade at the end of the trail, making the gun very stable when firing. It also provided a smooth flat surface for the carriage to rotate on using the road wheels, this enabled the gunners to traverse the carriage quickly in any direction.",
         "keywords": [
-            "available",
-            "making",
-            "so",
-            "form",
             "1",
-            "model",
-            "per",
-            "very",
-            "most",
-            "I",
-            "new",
-            "It",
+            "available",
             "design",
-            "these",
             "end",
-            "provided",
-            "do"
+            "form",
+            "making",
+            "model",
+            "most",
+            "new",
+            "per",
+            "provided"
         ]
     },
     {
         "id": "21",
         "content": "While aboard ship, Task Force 78, the San Fabian Attack Force, a full three days behind Admiral Oldendorf's Naval convoys, was commanded by Vice Admiral Daniel E. Barbey, and Task Force 79, the Lingayen Attack Force, an equal distance behind Oldendorf, was commanded by Vice Admiral Theodore Wilkinson. Once disembarking from their ships, the two ground-based assault Task Forces would put more U.S. troops ashore on the first day at Lingayen than those arriving on the bloody beaches of Normandy on Day one of D-Day. Within a few days, the assault forces had quickly captured the coastal towns and secured the 20-mile-long (32\u00a0km) beachhead, as well as penetrating up to five miles (8\u00a0km) inland.",
         "keywords": [
-            "so",
-            "those",
-            "For",
-            "well",
-            "than",
-            "secure",
             "end",
-            "While",
-            "would",
-            "do"
+            "secure",
+            "well",
+            "would"
         ]
     },
     {
         "id": "22",
         "content": "Though initially successful, the German attacks stalled in the face of Soviet reinforcements brought in from across the Volga. The Soviet 13th Guards Rifle Division, assigned to counterattack at the Mamayev Kurgan and at Railway Station No. 1, suffered particularly heavy losses. Over 30 percent of its soldiers were killed in the first 24 hours, and just 320 out of the original 10,000 survived the entire battle. Both objectives were retaken, but only temporarily. The railway station changed hands 14 times in six hours. By the following evening, the 13th Guards Rifle Division had ceased to exist.",
         "keywords": [
-            "so",
             "1",
-            "per",
-            "part",
+            "following",
             "original",
             "out",
-            "following"
+            "part",
+            "per"
         ]
     },
     {
@@ -444,16 +387,16 @@
         "id": "24",
         "content": "Escort destroyers hunting for U-boats continued to be a prominent, but misguided, technique of British anti-submarine strategy for the first year of the war. U-boats nearly always proved elusive, and the convoys, denuded of cover, were put at even greater risk.",
         "keywords": [
-            "year",
-            "early"
+            "early",
+            "year"
         ]
     },
     {
         "id": "25",
         "content": "General Ma Hushan was expecting help from Nanjing, as he exchanged messages with Chiang regarding the Soviet attack. But, both the Second Sino-Japanese War and the Xinjiang War erupted simultaneously leaving Chiang and Ma Hushan each on their own to confront the Japanese and Soviet forces.",
         "keywords": [
-            "exchange",
-            "both"
+            "both",
+            "exchange"
         ]
     },
     {
@@ -461,9 +404,9 @@
         "content": "Japanese submarines operated in Australian waters from January 1942 until July 1944. Major submarine offensives were carried out against shipping off the Australian east coast from May to July 1942 and January to July 1943.",
         "keywords": [
             "1",
-            "per",
             "1942",
-            "out"
+            "out",
+            "per"
         ]
     },
     {
@@ -471,31 +414,27 @@
         "content": "In most jurisdictions the copyright holder must bear the cost of enforcing copyright. This will usually involve engaging legal representation, administrative or court costs. In light of this, many copyright disputes are settled by a direct approach to the infringing party in order to settle the dispute out of court.",
         "keywords": [
             "approach",
-            "must",
-            "most",
-            "I",
-            "part",
-            "out",
             "copyright",
-            "usually",
-            "set"
+            "most",
+            "must",
+            "out",
+            "part",
+            "set",
+            "usually"
         ]
     },
     {
         "id": "28",
         "content": "The Internet has brought new opportunities for copywriters to learn their craft, do research and view others' work. Clients, copywriters and art directors can more readily find each other, making freelancing a viable job option. There are also many new websites that make becoming a freelance copywriter a much more organized process.",
         "keywords": [
-            "making",
-            "so",
-            "work",
-            "port",
-            "I",
-            "research",
-            "new",
-            "do",
             "make",
+            "making",
             "much",
-            "web"
+            "new",
+            "port",
+            "research",
+            "web",
+            "work"
         ]
     },
     {
@@ -504,115 +443,90 @@
         "keywords": [
             "allow",
             "allowed",
-            "per",
-            "very",
-            "I",
-            "versions",
-            "do",
             "make",
-            "public"
+            "per",
+            "public",
+            "versions"
         ]
     },
     {
         "id": "30",
         "content": "Under a bill proposed by the government of Chancellor Angela Merkel approved by the Bundestag, Germany infringement of copyright is equivalent to the crime of theft. The prison sentences for violations of copyright, exactly equal to those provided for the theft, are five years in prison and are the strictest in Europe. For the offense may be indicted even children under 18 years. In addition, following the judgment of 20 October 1993 on the case Phil Collins, it was launched Article 12 (in the Treaty establishing the European Community), according to which states cannot discriminate against goods from other countries.",
         "keywords": [
-            "so",
             "1",
-            "those",
-            "For",
-            "year",
-            "An",
-            "I",
             "cannot",
-            "provided",
-            "following",
+            "cell",
             "copyright",
-            "years",
             "countries",
-            "cell"
+            "following",
+            "provided",
+            "year",
+            "years"
         ]
     },
     {
         "id": "31",
         "content": "Database rights last for 15 years. Each time a database is substantially modified, however, a new set of rights are created for that database. An owner has the right to object to the copying of substantial parts of their database, even if data is extracted and reconstructed piecemeal. Database rights under the EU are created automatically, vested in the employers of creators (when the action of creation was part of employment), and do not have to be registered to have effect.",
         "keywords": [
-            "owner",
             "1",
-            "year",
-            "An",
-            "part",
-            "new",
-            "do",
-            "years",
-            "rights",
             "however",
-            "set"
+            "new",
+            "owner",
+            "part",
+            "rights",
+            "set",
+            "year",
+            "years"
         ]
     },
     {
         "id": "32",
         "content": "The International Treaty on Plant Genetic Resources for Food and Agriculture was open to accession a year after adoption and once closed to signatures (Article 27), i.e., on 4 November 2002. 77 countries and the European Union had signed the treaty by that date.",
         "keywords": [
-            "so",
-            "year",
-            "I",
-            "do",
             "countries",
-            "after"
+            "year"
         ]
     },
     {
         "id": "33",
         "content": "The long-term goal is to actually have a legal system, and certainly a treaty could do that, that acknowledges two things.  Number one, it acknowledges that indigenous peoples are peoples with a right to self-determination that includes governance rights over all property belonging to the indigenous people. And, number two, it acknowledges that indigenous cultural expressions are a form of intellectual property and that traditional knowledge is a form of intellectual property, but they are collective resources \u2013 so not any one individual can give away the rights to those resources. The tribal nations actually own them collectively.",
         "keywords": [
-            "so",
-            "form",
-            "those",
-            "per",
-            "An",
-            "do",
-            "rights",
             "actually",
             "could",
+            "edge",
+            "form",
             "includes",
             "number",
+            "per",
             "resources",
-            "\u2013",
-            "edge"
+            "rights"
         ]
     },
     {
         "id": "34",
         "content": "According to industrial property Act 2001, an industrial design is defined as \"any composition of lines or colours or any three-dimensional form whether or not associated with lines or colours, provided that such composition or form gives a special appearance to a product of industry or handicraft and can serve as pattern for a product of industry or handicraft\" .",
         "keywords": [
-            "industrial",
-            "so",
-            "form",
             "1",
-            "per",
-            "design",
-            "provided",
             "defined",
-            "industry"
+            "design",
+            "form",
+            "industrial",
+            "industry",
+            "per",
+            "provided"
         ]
     },
     {
         "id": "35",
         "content": "The inventors, their successors or their assignees become the proprietors of the patent when and if it is granted. If a patent is granted to more than one proprietor, the laws of the country in question and any agreement between the proprietors may affect the extent to which each proprietor can exploit the patent. For example, in some countries, each proprietor may freely license or assign their rights in the patent to another person while the law in other countries prohibits such actions without the permission of the other proprietor(s).",
         "keywords": [
-            "while",
-            "so",
-            "per",
-            "For",
-            "I",
-            "example",
-            "than",
-            "out",
             "countries",
-            "rights",
+            "example",
+            "out",
             "patent",
-            "If"
+            "per",
+            "rights",
+            "while"
         ]
     },
     {
@@ -620,31 +534,27 @@
         "content": "The total combined duration of market exclusivity of a general patent and SPC cannot normally exceed 15 years. However, the reward of a 6-month SPC extension for the submission of data from an agreed PIP can extend this combined duration to 15.5 years.",
         "keywords": [
             "1",
-            "year",
-            "general",
-            "I",
+            "However",
             "cannot",
             "end",
-            "years",
+            "general",
             "patent",
-            "However"
+            "year",
+            "years"
         ]
     },
     {
         "id": "37",
         "content": "Any person who, on or in connection with any goods or services, or any container for goods, uses in commerce any word, term, name, symbol, or device, or any combination thereof, or any false designation of origin, false or misleading description of fact, or false or misleading representation of fact, which",
         "keywords": [
-            "so",
-            "who",
             "connect",
-            "device",
-            "there",
-            "per",
-            "An",
             "design",
+            "device",
+            "per",
+            "service",
             "services",
             "uses",
-            "service"
+            "who"
         ]
     },
     {
@@ -652,11 +562,10 @@
         "content": "The precise language by which a trade secret is defined varies by jurisdiction, as do the particular types of information that are subject to trade secret protection. Three factors are common to all such definitions:",
         "keywords": [
             "common",
+            "defined",
             "form",
             "information",
             "part",
-            "do",
-            "defined",
             "secret",
             "types"
         ]
@@ -665,14 +574,11 @@
         "id": "39",
         "content": "Definitions of \"abandoned\" vary, but in general it is like any item that is abandoned \u2013 it is ignored by the owner, and as such product support and possibly copyright enforcement are also \"abandoned\".",
         "keywords": [
-            "so",
+            "copyright",
+            "general",
             "like",
             "owner",
             "port",
-            "general",
-            "copyright",
-            "do",
-            "\u2013",
             "support"
         ]
     },
@@ -680,80 +586,65 @@
         "id": "40",
         "content": "Roughly 84 per cent of Taiwan's population are descendants of Han Chinese immigrants from Qing China between 1683 and 1895. Another significant fraction descends from Han Chinese who immigrated from mainland China in the late 1940s and early 1950s. The shared cultural origin combined with several hundred years of geographical separation, some hundred years of political separation and foreign influences, as well as hostility between the rival ROC and PRC have resulted in national identity being a contentious issue with political overtones.",
         "keywords": [
-            "so",
             "1",
-            "who",
-            "per",
-            "year",
-            "well",
-            "An",
-            "end",
             "early",
-            "years",
-            "host"
+            "end",
+            "host",
+            "per",
+            "well",
+            "who",
+            "year",
+            "years"
         ]
     },
     {
         "id": "41",
         "content": "On the WGS84 spheroid, the length in meters of a degree of latitude at latitude \u03c6 (that is, the number of meters you would have to travel along a north\u2013south line to move 1 degree in latitude, when at latitude \u03c6), is about",
         "keywords": [
-            "so",
             "1",
-            "about",
             "length",
-            "would",
-            "out",
             "number",
-            "\u2013"
+            "out",
+            "would"
         ]
     },
     {
         "id": "42",
         "content": "On the national emblem rays of sun have some distance to the edge, symbolizing the broadness of the sky, while on Kuomintang emblem the rays reach the edge, symbolizing the spirit of revolution is as powerful as the sun.",
         "keywords": [
-            "while",
-            "so",
-            "edge"
+            "edge",
+            "while"
         ]
     },
     {
         "id": "43",
         "content": "The terrain in Taiwan is divided into two parts: the flat to gently rolling plains in the west, where 90% of the population lives, and the mostly rugged forest-covered mountains in the eastern two-thirds.",
         "keywords": [
-            "where",
             "most",
-            "part"
+            "part",
+            "where"
         ]
     },
     {
         "id": "44",
         "content": "Many yearly festivals are held in Taipei. In recent years some festivals, such as the Double Ten Day fireworks and concerts, are increasingly hosted on a rotating basis by a number of cities around Taiwan.",
         "keywords": [
-            "so",
+            "early",
+            "host",
+            "number",
             "work",
             "year",
-            "I",
-            "early",
-            "years",
-            "number",
-            "host"
+            "years"
         ]
     },
     {
         "id": "45",
         "content": "For tones 4 and 8, a final consonant \u27e8p\u27e9, \u27e8t\u27e9, or \u27e8k\u27e9 may appear. When this happens, it is impossible for the syllable to be nasal. Indeed, these are the counterpart to the nasal final consonants \u27e8m\u27e9, \u27e8n\u27e9, and \u27e8ng\u27e9, respectively, in other tones. However, it is possible to have a nasal 4th or 8th tone syllable such as \u27e8sia\u207fh\u27e9, as long as there is no final consonant other than \u27e8h\u27e9.",
         "keywords": [
-            "so",
-            "possible",
-            "there",
-            "For",
-            "I",
-            "part",
-            "than",
-            "these",
             "However",
             "final",
-            "When"
+            "part",
+            "possible"
         ]
     },
     {
@@ -761,117 +652,102 @@
         "content": "With the publication of FIPS PUB 180-2, NIST added three additional hash functions in the SHA family. The algorithms are collectively known as SHA-2, named after their digest lengths (in bits): SHA-256, SHA-384, and SHA-512.",
         "keywords": [
             "1",
-            "I",
+            "function",
             "functions",
             "hash",
-            "function",
+            "known",
             "length",
-            "public",
-            "after",
-            "known"
+            "public"
         ]
     },
     {
         "id": "47",
         "content": "Paul Crowley, a cryptographer and senior developer at an independent software development company, expressed his support of the decision, saying that Keccak is supposed to be tunable and there is no reason for different security levels within one primitive. He also added:",
         "keywords": [
-            "so",
-            "there",
-            "port",
-            "per",
-            "within",
-            "software",
+            "company",
             "end",
+            "per",
+            "port",
+            "software",
             "support",
-            "company"
+            "within"
         ]
     },
     {
         "id": "48",
         "content": "NESSIE was intended to identify and evaluate quality cryptographic designs in several categories, and to that end issued a public call for submissions in March 2000. Forty-two were received, and in February 2003 twelve of the submissions were selected. In addition, five algorithms already publicly known, but not explicitly submitted to the project, were chosen as \"selectees\". The project has publicly announced that \"no weaknesses were found in the selected designs\".",
         "keywords": [
-            "For",
-            "I",
             "design",
             "end",
-            "public",
-            "known"
+            "known",
+            "public"
         ]
     },
     {
         "id": "49",
         "content": "A compression function mixes two fixed length inputs and produces a single fixed length output of the same size as one of the inputs. This can also be seen as that the compression function transforms one large fixed-length input into a shorter, fixed-length output.",
         "keywords": [
-            "so",
-            "form",
-            "large",
-            "input",
-            "function",
             "fixed",
+            "form",
+            "function",
+            "input",
+            "large",
             "length",
-            "single",
+            "out",
             "output",
-            "out"
+            "single"
         ]
     },
     {
         "id": "50",
         "content": "The aim of SLM is to display the IT security status transparently across a company at any time, and to make IT security a measurable quantity. Transparency and measurability form the prerequisites for making IT security proactively monitorable, so that it can be improved continuously.",
         "keywords": [
-            "making",
-            "proactively",
-            "so",
-            "form",
-            "I",
-            "make",
             "company",
-            "display"
+            "display",
+            "form",
+            "make",
+            "making",
+            "proactively"
         ]
     },
     {
         "id": "51",
         "content": "The following hash function submissions were accepted for Round Two, but did not make it to the final round. As noted in the announcement of the finalists, \"none of these candidates was clearly broken\".",
         "keywords": [
-            "As",
-            "hash",
-            "function",
-            "these",
-            "following",
             "early",
-            "make",
-            "final"
+            "final",
+            "following",
+            "function",
+            "hash",
+            "make"
         ]
     },
     {
         "id": "52",
         "content": "The TLS protocol aims primarily to provide privacy and data integrity between two or more communicating computer applications. It runs in the application layer of the Internet and is itself composed of two layers: the TLS record and the TLS handshake protocols.",
         "keywords": [
-            "applications",
-            "application",
-            "I",
-            "It",
-            "integrity",
-            "record",
             "TLS",
+            "application",
+            "applications",
             "computer",
+            "integrity",
             "itself",
-            "protocols"
+            "protocols",
+            "record"
         ]
     },
     {
         "id": "53",
         "content": "The TLS protocol aims primarily to provide privacy and data integrity between two or more communicating computer applications. It runs in the application layer of the Internet and is itself composed of two layers: the TLS record and the TLS handshake protocols.",
         "keywords": [
-            "applications",
-            "application",
-            "I",
-            "It",
-            "integrity",
-            "record",
             "TLS",
+            "application",
+            "applications",
             "computer",
+            "integrity",
             "itself",
-            "protocols"
+            "protocols",
+            "record"
         ]
     },
     {
@@ -879,10 +755,10 @@
         "content": "Before a client attempts to connect with a server, the server must first bind to and listen at a port to open it up for connections: this is called a passive open. Once the passive open is established, a client may establish a connection by initiating an active open using the three-way (or 3-step) handshake:",
         "keywords": [
             "called",
+            "client",
             "connect",
             "must",
-            "port",
-            "client"
+            "port"
         ]
     },
     {
@@ -890,164 +766,143 @@
         "content": "The literature presents numerous analogies between computer communication and programming. In analogy, a transfer mechanism of a protocol is comparable to a central processing unit (CPU). The framework introduces rules that allow the programmer to design cooperating protocols independently of one another.",
         "keywords": [
             "allow",
-            "work",
-            "per",
-            "I",
+            "computer",
             "design",
             "end",
-            "computer",
-            "protocols"
+            "per",
+            "protocols",
+            "work"
         ]
     },
     {
         "id": "56",
         "content": "In 1975, a two-network TCP/IP communications test was performed between Stanford and University College London. In November 1977, a three-network TCP/IP test was conducted between sites in the US, the UK, and Norway. Several other TCP/IP prototypes were developed at multiple research centers between 1978 and 1983.",
         "keywords": [
-            "perform",
-            "form",
             "1",
-            "work",
+            "TCP",
+            "TCP/IP",
+            "communications",
+            "form",
             "multiple",
             "per",
-            "communications",
-            "I",
+            "perform",
             "research",
-            "do",
             "types",
-            "TCP/IP",
-            "TCP"
+            "work"
         ]
     },
     {
         "id": "57",
         "content": "Usually, when the transmitter does not receive the acknowledgment before the timeout occurs (i.e., within a reasonable amount of time after sending the data frame), it retransmits the frame until it is either correctly received or the error persists beyond a predetermined number of retransmissions.",
         "keywords": [
-            "so",
+            "end",
+            "number",
+            "out",
             "per",
             "transmission",
-            "within",
-            "end",
-            "out",
-            "do",
-            "after",
-            "number"
+            "within"
         ]
     },
     {
         "id": "58",
         "content": "The computer receiving the HTTP request delivers it to web server software listening for requests on port 80. If the web server can fulfil the request it sends an HTTP response back to the browser indicating success:",
         "keywords": [
-            "so",
-            "port",
             "back",
-            "software",
-            "I",
-            "requests",
-            "end",
-            "If",
+            "browser",
             "computer",
+            "end",
+            "port",
             "request",
-            "web",
-            "browser"
+            "requests",
+            "software",
+            "web"
         ]
     },
     {
         "id": "59",
         "content": "Video latency refers to the degree of delay between the time a transfer of a video stream is requested and the actual time that transfer begins. Networks that exhibit relatively small delays are known as low-latency networks, while their counterparts are known as high-latency networks.",
         "keywords": [
-            "while",
-            "work",
-            "part",
-            "small",
+            "high",
             "known",
+            "part",
             "request",
-            "high"
+            "small",
+            "while",
+            "work"
         ]
     },
     {
         "id": "60",
         "content": "When a sender receives three duplicate acknowledgements, it can be reasonably confident that the segment carrying the data that followed the last in-order byte specified in the acknowledgment was lost. A sender with fast retransmit will then retransmit this packet immediately without waiting for its timeout. On receipt of the retransmitted segment, the receiver can acknowledge the last in-order byte of data received. In the above example, this would acknowledge to the end of the payload of the fifth packet. There is no need to acknowledge intermediate packets, since TCP uses cumulative acknowledgements by default.",
         "keywords": [
-            "so",
-            "I",
-            "example",
-            "end",
-            "would",
-            "out",
-            "uses",
+            "TCP",
             "edge",
-            "When",
+            "end",
+            "example",
+            "out",
             "sender",
-            "TCP"
+            "uses",
+            "would"
         ]
     },
     {
         "id": "61",
         "content": "If an attacker can cause delivery of counterfeit packets of this sort, he or she may be able to cause various sorts of mischief, including the injection into an existing TCP connection of data of the attacker's choosing, and the premature closure of an existing TCP connection by the injection of counterfeit packets with the RST bit set.",
         "keywords": [
-            "so",
+            "TCP",
             "connect",
             "including",
-            "very",
-            "I",
-            "set",
-            "If",
-            "TCP"
+            "set"
         ]
     },
     {
         "id": "62",
         "content": "TCP is used with IP when a two-way virtual connection is required between two computers. (UDP on the other hand is a connectionless IP protocol.)\nTCP software on the two machines which will communicate (for example a workstation with a browser and a web server) by exchanging a stream of packets. Using a TCP connection gives the computers an easy way to exchange data items too big for a single packet, such as video clips, email attachments, or music files. Although some web pages are small enough for a single packet, they are sent over TCP connections for convenience.",
         "keywords": [
-            "require",
-            "so",
-            "work",
-            "exchange",
-            "connect",
-            "software",
-            "I",
-            "example",
-            "small",
-            "single",
-            "computer",
-            "web",
-            "browser",
             "TCP",
-            "page"
+            "browser",
+            "computer",
+            "connect",
+            "example",
+            "exchange",
+            "page",
+            "require",
+            "single",
+            "small",
+            "software",
+            "web",
+            "work"
         ]
     },
     {
         "id": "63",
         "content": "The first state is the Idle state. In the Idle state, BGP initializes all resources, refuses all inbound BGP connection attempts and initiates a TCP connection to the peer. The second state is Connect. In the Connect state, the router waits for the TCP connection to complete and transitions to the OpenSent state if successful. If unsuccessful, it starts the ConnectRetry timer and transitions to the Active state upon expiration. In the Active state, the router resets the ConnectRetry timer to zero and returns to the Connect state. In the OpenSent state, the router sends an Open message and waits for one in return in order to transition to the OpenConfirm state. Keepalive messages are exchanged and, upon successful receipt, the router is placed into the Established state. In the Established state, the router can send and receive: Keepalive; Update; and Notification messages to and from its peer.",
         "keywords": [
-            "so",
-            "exchange",
+            "TCP",
             "connect",
-            "router",
-            "I",
             "end",
+            "exchange",
             "out",
-            "set",
             "resources",
-            "If",
-            "uses",
-            "TCP"
+            "router",
+            "set",
+            "uses"
         ]
     },
     {
         "id": "64",
         "content": "On large networks that consist of multiple links, a single DHCP server may service the entire network when aided by DHCP relay agents located on the interconnecting routers. Such agents relay messages between DHCP clients and DHCP servers located on different subnets.",
         "keywords": [
-            "link",
-            "work",
-            "connect",
-            "router",
-            "multiple",
-            "large",
-            "single",
-            "out",
             "client",
-            "service"
+            "connect",
+            "large",
+            "link",
+            "multiple",
+            "out",
+            "router",
+            "service",
+            "single",
+            "work"
         ]
     },
     {
@@ -1056,8 +911,6 @@
         "keywords": [
             "called",
             "common",
-            "so",
-            "these",
             "set",
             "types"
         ]
@@ -1067,88 +920,82 @@
         "content": "MGCP presents a call control architecture with limited intelligence at the edge (endpoints, media gateways) and intelligence at the core controllers. The MGCP model assumes that call agents synchronize with each other to send coherent commands and responses to the gateways under their control.",
         "keywords": [
             "controller",
-            "model",
+            "edge",
             "end",
-            "edge"
+            "model"
         ]
     },
     {
         "id": "67",
         "content": "When a publishing client first connects to the broker, it can set up a default message to be sent to subscribers if the broker detects that the publishing client has unexpectedly disconnected from the broker.",
         "keywords": [
+            "client",
             "connect",
-            "set",
-            "When",
-            "client"
+            "set"
         ]
     },
     {
         "id": "68",
         "content": "A simplified PTP system frequently consists of ordinary clocks connected to a single network, and no boundary clocks are used. A grandmaster is elected and all other clocks synchronize directly to it.",
         "keywords": [
-            "work",
             "connect",
-            "single"
+            "single",
+            "work"
         ]
     },
     {
         "id": "69",
         "content": "A proxy server is a network server with UAC and UAS components that functions as an intermediary entity for the purpose of performing requests on behalf of other network elements. A proxy server primarily plays the role of call routing; it sends SIP requests to another entity closer to it destination. Proxies are also useful for enforcing policy, such as for determining whether a user is allowed to make a call. A proxy interprets, and, if necessary, rewrites specific parts of a request message before forwarding it.",
         "keywords": [
-            "so",
-            "perform",
-            "form",
             "allow",
-            "work",
             "allowed",
             "destination",
-            "per",
-            "necessary",
-            "I",
-            "part",
-            "functions",
-            "function",
-            "requests",
             "end",
-            "out",
+            "form",
+            "function",
+            "functions",
             "make",
-            "request"
+            "necessary",
+            "out",
+            "part",
+            "per",
+            "perform",
+            "request",
+            "requests",
+            "work"
         ]
     },
     {
         "id": "70",
         "content": "This system has several variations. For example, an organisation's SMTP server may only provide service to users on the same network, enforcing this by firewalling to block access by users on the wider Internet. Or the server may perform range checks on the client's IP address. These methods were typically used by corporations and institutions such as universities which provided an SMTP server for outbound mail only for use internally within the organisation. However, most of these bodies now use client authentication methods, as described below.",
         "keywords": [
-            "perform",
-            "form",
-            "work",
-            "per",
-            "For",
-            "within",
-            "most",
-            "I",
-            "example",
-            "these",
-            "provided",
-            "out",
             "However",
+            "address",
             "client",
+            "example",
+            "form",
+            "methods",
+            "most",
+            "out",
+            "per",
+            "perform",
+            "provided",
             "service",
             "users",
-            "address",
-            "methods"
+            "within",
+            "work"
         ]
     },
     {
         "id": "71",
         "content": "Three significant versions of SNMP have been developed and deployed. SNMPv1 is the original version of the protocol. More recent versions, SNMPv2c and SNMPv3, feature improvements in performance, flexibility and security.",
         "keywords": [
-            "perform",
-            "form",
-            "performance",
             "1",
-            "per",
+            "form",
             "original",
+            "per",
+            "perform",
+            "performance",
             "versions"
         ]
     },
@@ -1156,21 +1003,18 @@
         "id": "72",
         "content": "It is of note that there are a large number of industrial and scientific devices which have only Telnet available as a communication option.  Some are built with only a standard RS-232 port and use a serial server hardware appliance to provide the translation between the TCP/Telnet data and the RS-232 serial data.  In such cases, SSH is not an option unless the interface appliance can be configured for SSH.",
         "keywords": [
-            "available",
-            "industrial",
-            "hardware",
-            "standard",
-            "devices",
-            "device",
-            "cases",
-            "there",
-            "port",
-            "large",
-            "I",
-            "It",
-            "number",
             "TCP",
-            "interface"
+            "available",
+            "cases",
+            "device",
+            "devices",
+            "hardware",
+            "industrial",
+            "interface",
+            "large",
+            "number",
+            "port",
+            "standard"
         ]
     },
     {
@@ -1178,69 +1022,65 @@
         "content": "Before a client attempts to connect with a server, the server must first bind to and listen at a port to open it up for connections: this is called a passive open. Once the passive open is established, a client may establish a connection by initiating an active open using the three-way (or 3-step) handshake:",
         "keywords": [
             "called",
+            "client",
             "connect",
             "must",
-            "port",
-            "client"
+            "port"
         ]
     },
     {
         "id": "74",
         "content": "ICMP uses the basic support of IP as if it were a higher-level protocol, however, ICMP is actually an integral part of IP. Although ICMP messages are contained within standard IP packets, ICMP messages are usually processed as a special case, distinguished from normal IP processing. In many cases, it is necessary to inspect the contents of the ICMP message and deliver the appropriate error message to the application responsible for transmitting the IP packet that prompted the ICMP message to be sent.",
         "keywords": [
-            "standard",
-            "cases",
-            "port",
-            "within",
-            "application",
-            "necessary",
-            "I",
-            "part",
-            "usually",
-            "however",
             "actually",
-            "uses",
+            "application",
+            "cases",
+            "high",
+            "however",
+            "necessary",
+            "part",
+            "port",
+            "standard",
             "support",
-            "high"
+            "uses",
+            "usually",
+            "within"
         ]
     },
     {
         "id": "75",
         "content": "Conventionally, TCP/IP networks signal congestion by dropping packets.  When ECN is successfully negotiated, an ECN-aware router may set a mark in the IP header instead of dropping a packet in order to signal impending congestion.  The receiver of the packet echoes the congestion indication to the sender, which reduces its transmission rate as if it detected a dropped packet.",
         "keywords": [
-            "work",
-            "router",
-            "transmission",
-            "I",
+            "TCP",
+            "TCP/IP",
             "end",
             "out",
-            "set",
-            "When",
-            "TCP/IP",
+            "router",
             "sender",
-            "TCP",
-            "signal"
+            "set",
+            "signal",
+            "transmission",
+            "work"
         ]
     },
     {
         "id": "76",
         "content": "The link layer in the TCP/IP model is a descriptive realm of networking protocols that operate only on the local network segment (link) that a host is connected to. Such protocol packets are not routed to other networks. The link layer includes the protocols that define communication between local (on-link) network nodes which fulfill the purpose of maintaining link states between the local nodes, such as the local network topology, and that usually use protocols that are based on the framing of packets specific to the link types.",
         "keywords": [
-            "link",
-            "model",
-            "work",
-            "connect",
-            "per",
-            "I",
-            "out",
-            "usually",
-            "includes",
-            "types",
-            "protocols",
-            "TCP/IP",
             "TCP",
+            "TCP/IP",
+            "connect",
+            "host",
+            "includes",
+            "link",
             "local",
-            "host"
+            "model",
+            "out",
+            "per",
+            "protocols",
+            "types",
+            "usually",
+            "work"
         ]
     },
     {
@@ -1248,403 +1088,360 @@
         "content": "The principal packet structure of ARP packets is shown in the following table which illustrates the case of IPv4 networks running on Ethernet. In this scenario, the packet has 48-bit fields for the sender hardware address (SHA) and target hardware address (THA), and 32-bit fields for the corresponding sender and target protocol addresses (SPA and TPA). The ARP packet size in this case is 28 bytes.",
         "keywords": [
             "Ethernet",
-            "hardware",
-            "work",
-            "I",
+            "address",
+            "addresses",
             "end",
             "following",
+            "hardware",
             "sender",
-            "address",
-            "addresses"
+            "work"
         ]
     },
     {
         "id": "78",
         "content": "Equipment frequently support multiple versions of Wi-Fi. To communicate, devices must use a common Wi-Fi version. The versions differ between the radio wavebands they operate on, the radio bandwidth they occupy, the maximum data rates they can support and other details. Some versions permit the use of multiple antennas, which permits greater speeds as well as reduced interference.",
         "keywords": [
+            "antenna",
             "common",
-            "devices",
             "device",
-            "must",
+            "devices",
             "multiple",
-            "port",
+            "must",
             "per",
-            "well",
-            "versions",
+            "port",
             "support",
-            "antenna"
+            "versions",
+            "well"
         ]
     },
     {
         "id": "79",
         "content": "FDDI requires this network topology because the dual ring actually passes through each connected device and requires each such device to remain continuously operational.\nThe standard actually allows for optical bypasses, but network engineers consider these unreliable and error-prone. Devices such as workstations and minicomputers that might not come under the control of the network managers are not suitable for connection to the dual ring.",
         "keywords": [
-            "require",
-            "standard",
+            "actually",
             "allow",
-            "because",
-            "work",
             "allows",
+            "because",
+            "computer",
             "connect",
             "device",
             "per",
-            "I",
-            "these",
-            "actually",
-            "computer"
+            "require",
+            "standard",
+            "work"
         ]
     },
     {
         "id": "80",
         "content": "The most prominent component of the Internet model is the Internet Protocol (IP). IP enables internetworking and, in essence, establishes the Internet itself. Two versions of the Internet Protocol exist, IPV4 and IPV6.",
         "keywords": [
+            "itself",
             "model",
-            "work",
             "most",
-            "I",
             "versions",
-            "itself"
+            "work"
         ]
     },
     {
         "id": "81",
         "content": "Early network design, when global end-to-end connectivity was envisioned for communications with all Internet hosts, intended that IP addresses be globally unique. However, it was found that this was not always necessary as private networks developed and public address space needed to be conserved.",
         "keywords": [
-            "work",
-            "connect",
-            "communications",
-            "necessary",
-            "I",
-            "space",
-            "design",
-            "end",
-            "public",
             "However",
             "address",
+            "addresses",
+            "communications",
+            "connect",
+            "design",
+            "end",
             "host",
-            "addresses"
+            "necessary",
+            "public",
+            "space",
+            "work"
         ]
     },
     {
         "id": "82",
         "content": "The initial perception of NFV was that virtualized capability should be implemented in data centers. This approach works in many \u2013 but not all \u2013 cases. NFV presumes and emphasizes the widest possible flexibility as to the physical location of the virtualized functions.",
         "keywords": [
-            "approach",
-            "possible",
-            "work",
-            "physical",
-            "location",
-            "cases",
-            "per",
-            "functions",
-            "function",
-            "\u2013",
             "NFV",
+            "approach",
+            "cases",
+            "function",
+            "functions",
+            "location",
+            "per",
+            "physical",
+            "possible",
+            "should",
             "virtualized",
-            "should"
+            "work"
         ]
     },
     {
         "id": "83",
         "content": "The term \"session\" refers to a communication between two parties \u2013 in the context of telephony, this would be a call. Each call consists of one or more call signaling message exchanges that control the call, and one or more call media streams which carry the call's audio, video, or other data along with information of call statistics and quality. Together, these streams make up a session. It is the job of a session border controller to exert influence over the data flows of sessions.",
         "keywords": [
-            "flow",
             "controller",
+            "exchange",
+            "flow",
             "flows",
             "form",
-            "exchange",
             "information",
-            "I",
-            "part",
-            "It",
-            "these",
-            "would",
             "make",
-            "\u2013",
-            "signal"
+            "part",
+            "signal",
+            "would"
         ]
     },
     {
         "id": "84",
         "content": "In addition to the before mentioned, to configure a terminal server cluster, one needs a load-balancing technology such as Network Load Balancing (NLB) or DNS round robin. A load balancing solution will distribute client connections to each of the terminal servers.",
         "keywords": [
-            "so",
-            "work",
-            "connect",
-            "I",
+            "DNS",
             "client",
-            "DNS"
+            "connect",
+            "work"
         ]
     },
     {
         "id": "85",
         "content": "Leif Ekman, professor in Telecommunication, states that \"Carrier grade\" is not a standard or very clearly defined term but, rather, a set of features and qualities that make the product acceptable by a carrier:\nThe feature set that enables the carrier to utilize the business with use of that equipment. High quality and very good MTBF (Some requirements are stated in TR-144 chapter 7.17). Redundancy (if one part goes down, there is an alternative). Easy and cost-efficient O&M. All Standardized as much as possible",
         "keywords": [
-            "require",
-            "standard",
-            "so",
             "1",
-            "possible",
-            "there",
-            "very",
-            "equipment",
-            "part",
+            "defined",
             "early",
-            "do",
+            "equipment",
             "make",
             "much",
+            "part",
+            "possible",
+            "require",
             "set",
-            "defined"
+            "standard"
         ]
     },
     {
         "id": "86",
         "content": "For digital-only designs, however, \"standard-cell\" cell libraries, together with modern CAD systems, can offer considerable performance/cost benefits with low risk. Automated layout tools are quick and easy to use and also offer the possibility to \"hand-tweak\" or manually optimize any performance-limiting aspect of the design.",
         "keywords": [
-            "standard",
-            "so",
-            "perform",
-            "form",
-            "performance",
-            "systems",
-            "per",
-            "For",
+            "cell",
             "design",
-            "out",
+            "form",
             "however",
-            "cell"
+            "out",
+            "per",
+            "perform",
+            "performance",
+            "standard",
+            "systems"
         ]
     },
     {
         "id": "87",
         "content": "Google Talk was integrated into Gmail where users could send instant messages to other Gmail users. As it worked within a browser, the Google Talk client did not need to be downloaded to send instant messages to Gmail users.",
         "keywords": [
-            "where",
-            "work",
-            "within",
-            "As",
-            "end",
-            "do",
-            "could",
-            "client",
             "browser",
-            "users"
+            "client",
+            "could",
+            "end",
+            "users",
+            "where",
+            "within",
+            "work"
         ]
     },
     {
         "id": "88",
         "content": "Since the early 1990s, the terms \"white paper\" or \"whitepaper\" have been applied to documents used as marketing or sales tools in business. These white papers are long-form content designed to promote the products or services from a specific company. As a marketing tool, these papers use selected facts and logical arguments to build a case favorable to the company sponsoring the document.",
         "keywords": [
-            "so",
-            "form",
             "1",
-            "per",
-            "As",
+            "company",
             "design",
             "designed",
-            "these",
             "early",
-            "do",
-            "services",
-            "company",
-            "service"
+            "form",
+            "per",
+            "service",
+            "services"
         ]
     },
     {
         "id": "89",
         "content": "SDN technology is currently available for industrial control applications that require extremely fast failover, called Operational Technology (OT) Software Defined Networking (SDN).  OT SDN technology is an approach to manage network access control and Ethernet packet delivery on environmentally hardened hardware for critical infrastructure networks. OT SDN abstracts the management of the control plane from the switches centralizing it in the flow controller and applies SDN as the underlay control plane in the switch. The legacy control plane is removed simplifying the switch while centralizing the control plane management. The common control plane standard used in OT SDN is OpenFlow making it interoperable with other SDN solutions with the difference being that OpenFlow is the only control plane in the switch and that the switch retains flows through power cycles and all flows and redundancy are proactively traffic engineered so the switches can perform the forwarding they are configured to perform with or without the flow controller online. OT SDN provides advantages for industrial networks in the form of performance, cybersecurity and situational awareness. Performance advantages are achieved through proactively traffic engineering contingencies using Fast Failover groups in OpenFlow resulting in network healing from link or switch failures in microseconds not milliseconds like spanning tree technology.  Another performance advantage is that loop mitigation is done through traffic engineered path planning and not blocked ports allowing the system owner to actively use all ports. Cybersecurity advantages of OT SDN is that the switches are deny by default and flows are the rules that allow traffic to be forwarded. This provides strong network access control where packets can be inspected from layer 1 through layer 4 of the OSI model at each hop. Legacy control plane security vulnerabilities are removed since the legacy control plane no longer exists. MAC table spoofing and BPDU spoofing are no longer possible because neither exist in the OT SDN switches. Pivoting and network reconnaissance no longer work with proper flow programming as only allowed traffic is approved to be forwarded combining the physical location and path with the virtual packet filtering. Situational awareness advantages of OT SDN provide the network owner with the visibility to what devices are on their network and what conversations can and are happening and who those conversations can happen between.  OT SDN network technology allows Ethernet networks to meet the demanding communication message exchange requirements of measurement and control for critical infrastructure and simply provides the system owner control over what devices can connect to the network, where those devices can connect, and what conversations each device can have.",
         "keywords": [
-            "available",
-            "industrial",
-            "applications",
-            "require",
-            "called",
-            "approach",
-            "Ethernet",
-            "hardware",
-            "management",
-            "switches",
-            "flow",
-            "controller",
-            "legacy",
-            "while",
-            "common",
-            "standard",
-            "OpenFlow",
-            "making",
-            "flows",
-            "proactively",
-            "traffic",
-            "so",
-            "perform",
-            "provides",
-            "advantages",
-            "form",
-            "performance",
-            "link",
-            "like",
-            "ports",
-            "owner",
-            "allow",
-            "where",
             "1",
-            "model",
-            "longer",
-            "possible",
-            "because",
-            "work",
+            "Ethernet",
+            "OpenFlow",
+            "advantages",
+            "allow",
             "allowed",
-            "physical",
-            "location",
-            "what",
-            "devices",
-            "conversations",
-            "who",
-            "those",
             "allows",
-            "exchange",
-            "connect",
-            "device",
-            "port",
-            "per",
-            "very",
             "application",
-            "An",
-            "I",
+            "applications",
+            "approach",
+            "available",
+            "because",
+            "called",
+            "common",
+            "connect",
+            "controller",
+            "conversations",
+            "device",
+            "devices",
+            "exchange",
+            "flow",
+            "flows",
+            "form",
+            "hardware",
+            "industrial",
+            "legacy",
+            "like",
+            "link",
+            "location",
+            "longer",
+            "making",
+            "management",
+            "model",
             "out",
-            "do"
+            "owner",
+            "per",
+            "perform",
+            "performance",
+            "physical",
+            "port",
+            "ports",
+            "possible",
+            "proactively",
+            "provides",
+            "require",
+            "standard",
+            "switches",
+            "traffic",
+            "what",
+            "where",
+            "while",
+            "who",
+            "work"
         ]
     },
     {
         "id": "90",
         "content": "ETSI\u2019s standardization activities are organized around sectors: Home & Office, Better Living with ICT, Content Delivery, Networks, Wireless Systems, Transportation, Connecting Things, Interoperability, Public Safety and Security. Technical activities are carried out in the different ETSI technical groups (Technical Committee (TC), ETSI Project (EP), ETSI Partnership Project (EPP), Industry Specification Group (ISG), and Special Committee (SC).",
         "keywords": [
-            "standard",
-            "work",
-            "port",
-            "per",
-            "very",
-            "I",
+            "ETSI",
             "Project",
             "out",
-            "ETSI"
+            "per",
+            "port",
+            "standard",
+            "work"
         ]
     },
     {
         "id": "91",
         "content": "The Willis Tower (formerly named Sears Tower) is a popular destination for tourists. The Willis Tower has an observation deck open to tourists year round with high up views overlooking Chicago and Lake Michigan. The observation deck includes an enclosed glass balcony that extends 10 feet out on the side of the building. Tourists are able to look straight down.",
         "keywords": [
-            "form",
             "1",
             "destination",
-            "year",
             "end",
-            "out",
-            "do",
+            "form",
+            "high",
             "includes",
-            "high"
+            "out",
+            "year"
         ]
     },
     {
         "id": "92",
         "content": "The frame header contains the source and destination addresses that indicate which device originated the frame and which device is expected to receive and process it.  In contrast to the hierarchical and routable addresses of the network layer, layer 2 addresses are flat, meaning that no part of the address can be used to identify the logical or physical group to which the address belongs.",
         "keywords": [
-            "so",
-            "work",
-            "physical",
-            "device",
-            "destination",
-            "I",
-            "part",
-            "out",
             "address",
-            "addresses"
+            "addresses",
+            "destination",
+            "device",
+            "out",
+            "part",
+            "physical",
+            "work"
         ]
     },
     {
         "id": "93",
         "content": "The units used are seconds. An older common TTL value for DNS was 86400 seconds, which is 24 hours. A TTL value of 86400 would mean that, if a DNS record was changed on the authoritative nameserver, DNS servers around the world could still be showing the old value from their cache for up to 24 hours after the last update by client.",
         "keywords": [
-            "common",
-            "An",
-            "record",
-            "would",
-            "after",
-            "could",
-            "client",
             "DNS",
-            "cache"
+            "cache",
+            "client",
+            "common",
+            "could",
+            "record",
+            "would"
         ]
     },
     {
         "id": "94",
         "content": "\"In a general way, we can define computing to mean any goal-oriented activity requiring, benefiting from, or creating computers. Thus, computing includes designing and building hardware and software systems for a wide range of purposes; processing, structuring, and managing various kinds of information; doing scientific studies using computers; making computer systems behave intelligently; creating and using communications and entertainment media; finding and gathering information relevant to any particular purpose, and so on. The list is virtually endless, and the possibilities are vast.\"",
         "keywords": [
-            "hardware",
-            "making",
-            "so",
-            "form",
-            "systems",
-            "information",
-            "software",
-            "general",
             "communications",
-            "I",
-            "part",
+            "computer",
+            "computing",
             "design",
             "end",
-            "do",
+            "form",
+            "general",
+            "hardware",
             "includes",
-            "computer",
-            "computing"
+            "information",
+            "making",
+            "part",
+            "software",
+            "systems"
         ]
     },
     {
         "id": "95",
         "content": "The alternative situation, when the cache is checked and found not to contain any entry with the desired tag, is known as a cache miss. This requires a more expensive access of data from the backing store. Once the requested data is retrieved, it is typically copied into the cache, ready for the next access.",
         "keywords": [
-            "require",
             "back",
+            "cache",
             "known",
             "request",
-            "cache"
+            "require"
         ]
     },
     {
         "id": "96",
         "content": "ICMP uses the basic support of IP as if it were a higher-level protocol, however, ICMP is actually an integral part of IP. Although ICMP messages are contained within standard IP packets, ICMP messages are usually processed as a special case, distinguished from normal IP processing. In many cases, it is necessary to inspect the contents of the ICMP message and deliver the appropriate error message to the application responsible for transmitting the IP packet that prompted the ICMP message to be sent.",
         "keywords": [
-            "standard",
-            "cases",
-            "port",
-            "within",
-            "application",
-            "necessary",
-            "I",
-            "part",
-            "usually",
-            "however",
             "actually",
-            "uses",
+            "application",
+            "cases",
+            "high",
+            "however",
+            "necessary",
+            "part",
+            "port",
+            "standard",
             "support",
-            "high"
+            "uses",
+            "usually",
+            "within"
         ]
     },
     {
         "id": "97",
         "content": "Other types of records simply provide some types of information (for example, an HINFO record gives a description of the type of computer/OS a host uses), or others return data used in experimental features. The \"type\" field is also used in the protocol for various operations.",
         "keywords": [
-            "so",
+            "computer",
+            "example",
             "form",
+            "host",
             "information",
             "per",
-            "I",
-            "example",
             "record",
-            "uses",
             "types",
-            "computer",
-            "host"
+            "uses"
         ]
     },
     {
@@ -1652,30 +1449,27 @@
         "content": "Between 1991 and 1994, the simplicity and effectiveness of early technologies used to surf and exchange data through the World Wide Web helped to port them to many different operating systems and spread their use among scientific organizations and universities, and subsequently to the industry.",
         "keywords": [
             "1",
-            "exchange",
-            "systems",
-            "port",
-            "per",
             "early",
-            "industry"
+            "exchange",
+            "industry",
+            "per",
+            "port",
+            "systems"
         ]
     },
     {
         "id": "99",
         "content": "The request that a resource should not be cached is no guarantee that it will not be written to disk.  In particular, the HTTP/1.1 definition draws a distinction between history stores and caches.  If the user navigates back to a previous page a browser may still show you a page that has been stored on disk in the history store. This is correct behavior according to the specification.  Many user agents show different behavior in loading pages from the history store or cache depending on whether the protocol is HTTP or HTTPS.",
         "keywords": [
-            "so",
             "1",
             "back",
-            "I",
-            "part",
-            "end",
-            "If",
-            "request",
             "browser",
-            "should",
             "cache",
-            "page"
+            "end",
+            "page",
+            "part",
+            "request",
+            "should"
         ]
     },
     {
@@ -1683,289 +1477,258 @@
         "content": "At this time, advertising companies were already using third-party cookies. The recommendation about third-party cookies of RFC 2109 was not followed by Netscape and Internet Explorer. RFC 2109 was superseded by RFC 2965 in October 2000.",
         "keywords": [
             "1",
-            "about",
-            "per",
-            "I",
-            "part",
             "end",
-            "out"
+            "out",
+            "part",
+            "per"
         ]
     },
     {
         "id": "101",
         "content": "In cases of no response from the target host, most implementations display either nothing or periodically print notifications about timing out. Possible ping results indicating a problem include the following:",
         "keywords": [
-            "about",
             "cases",
-            "per",
-            "most",
-            "I",
-            "out",
-            "following",
             "display",
-            "host"
+            "following",
+            "host",
+            "most",
+            "out",
+            "per"
         ]
     },
     {
         "id": "102",
         "content": "The sender expects a reply within a specified number of seconds. If a packet is not acknowledged within the expected interval, an asterisk is displayed. The Internet Protocol does not require packets to take the same route towards a particular destination, thus hosts listed might be hosts that other packets have traversed. If the host at hop #N does not reply, the hop is skipped in the output.",
         "keywords": [
-            "require",
             "destination",
-            "within",
-            "I",
-            "part",
-            "output",
-            "end",
-            "out",
-            "do",
-            "number",
-            "If",
-            "edge",
             "display",
+            "edge",
+            "end",
+            "host",
+            "number",
+            "out",
+            "output",
+            "part",
+            "require",
             "sender",
-            "host"
+            "within"
         ]
     },
     {
         "id": "103",
         "content": "A category page can be edited like any other page. However, when it is displayed, the editable part of the page is followed by automatically generated lists of pages belonging to the category, as follows:",
         "keywords": [
-            "like",
-            "part",
             "However",
             "display",
-            "page"
+            "like",
+            "page",
+            "part"
         ]
     },
     {
         "id": "104",
         "content": "The TLS protocol aims primarily to provide privacy and data integrity between two or more communicating computer applications. It runs in the application layer of the Internet and is itself composed of two layers: the TLS record and the TLS handshake protocols.",
         "keywords": [
-            "applications",
-            "application",
-            "I",
-            "It",
-            "integrity",
-            "record",
             "TLS",
+            "application",
+            "applications",
             "computer",
+            "integrity",
             "itself",
-            "protocols"
+            "protocols",
+            "record"
         ]
     },
     {
         "id": "105",
         "content": "The reversal was complete with the availability of version 1.1 beta on 6 March 1995, in which a press release states that the final 1.1 release would be available at no cost only for academic and non-profit organizational use. Gone was the notion expressed in the first press release that Navigator would be freely available in the spirit of Internet software.",
         "keywords": [
-            "available",
-            "so",
             "1",
+            "available",
+            "final",
             "software",
-            "I",
-            "would",
-            "final"
+            "would"
         ]
     },
     {
         "id": "106",
         "content": "In each step of this sequence of client\u2013server message exchanges, a computer processes a request and returns data. This is the request-response messaging pattern. When all the requests are met, the sequence is complete and the web browser presents the data to the customer.",
         "keywords": [
-            "exchange",
-            "I",
-            "requests",
-            "\u2013",
-            "When",
-            "computer",
+            "browser",
             "client",
+            "computer",
+            "exchange",
             "request",
-            "web",
-            "browser"
+            "requests",
+            "web"
         ]
     },
     {
         "id": "107",
         "content": "IANA is responsible for the global coordination of the DNS root, IP addressing, and other protocol resources. This includes the registration of commonly used port numbers for well-known internet services.",
         "keywords": [
-            "common",
-            "so",
-            "port",
-            "well",
-            "I",
-            "includes",
-            "number",
-            "resources",
-            "services",
-            "known",
-            "service",
+            "DNS",
             "address",
-            "DNS"
+            "common",
+            "includes",
+            "known",
+            "number",
+            "port",
+            "resources",
+            "service",
+            "services",
+            "well"
         ]
     },
     {
         "id": "108",
         "content": "Symmetric-key algorithms require both the sender and the recipient of a message to have the same secret key.\nAll early cryptographic systems required either the sender or the recipient to somehow receive a copy of that secret key over a physically secure channel.",
         "keywords": [
-            "require",
-            "so",
-            "physical",
-            "systems",
             "both",
-            "key",
             "channel",
-            "secure",
-            "end",
             "early",
+            "end",
+            "key",
+            "physical",
+            "require",
             "secret",
-            "sender"
+            "secure",
+            "sender",
+            "systems"
         ]
     },
     {
         "id": "109",
         "content": "Encryption is used in the 21st century to protect digital data and information systems. As computing power increased over the years, encryption technology has only become more advanced and secure. However, this advancement in technology has also exposed a potential limitation of today's encryption methods.",
         "keywords": [
-            "so",
-            "form",
             "1",
-            "systems",
-            "information",
-            "year",
-            "As",
-            "secure",
-            "years",
             "However",
+            "computing",
+            "form",
+            "information",
             "methods",
-            "computing"
+            "secure",
+            "systems",
+            "year",
+            "years"
         ]
     },
     {
         "id": "110",
         "content": "A TLS server may be configured with a self-signed certificate. When that is the case, clients will generally be unable to verify the certificate, and will terminate the connection unless certificate checking is disabled.",
         "keywords": [
-            "connect",
-            "general",
-            "When",
             "TLS",
+            "certificate",
             "client",
-            "certificate"
+            "connect",
+            "general"
         ]
     },
     {
         "id": "111",
         "content": "Worldwide, the certificate authority business is fragmented, with national or regional providers dominating their home market.  This is because many uses of digital certificates, such as for legally binding digital signatures, are linked to local law, regulations, and accreditation schemes for certificate authorities.",
         "keywords": [
-            "link",
             "because",
-            "do",
-            "uses",
+            "certificate",
+            "link",
             "local",
-            "certificate"
+            "uses"
         ]
     },
     {
         "id": "112",
         "content": "The earliest methods for generating random numbers, such as dice, coin flipping and roulette wheels, are still used today, mainly in games and gambling as they tend to be too slow for most applications in statistics and cryptography.",
         "keywords": [
-            "applications",
-            "most",
             "application",
+            "applications",
             "end",
-            "do",
-            "number",
-            "methods"
+            "methods",
+            "most",
+            "number"
         ]
     },
     {
         "id": "113",
         "content": "Diffie\u2013Hellman key exchange establishes a shared secret between two parties that can be used for secret communication for exchanging data over a public network. An analogy illustrates the concept of public key exchange by using colors instead of very large numbers:",
         "keywords": [
-            "work",
             "exchange",
-            "very",
-            "large",
-            "An",
-            "part",
             "key",
-            "public",
+            "large",
             "number",
-            "\u2013",
-            "secret"
+            "part",
+            "public",
+            "secret",
+            "work"
         ]
     },
     {
         "id": "114",
         "content": "Symmetric-key algorithms require both the sender and the recipient of a message to have the same secret key.\nAll early cryptographic systems required either the sender or the recipient to somehow receive a copy of that secret key over a physically secure channel.",
         "keywords": [
-            "require",
-            "so",
-            "physical",
-            "systems",
             "both",
-            "key",
             "channel",
-            "secure",
-            "end",
             "early",
+            "end",
+            "key",
+            "physical",
+            "require",
             "secret",
-            "sender"
+            "secure",
+            "sender",
+            "systems"
         ]
     },
     {
         "id": "115",
         "content": "Forward secrecy protects data on the transport layer of a network that uses common SSL/TLS protocols, including OpenSSL, when its long-term secret keys are compromised, as with the Heartbleed security bug. If forward secrecy is used, encrypted communications and sessions recorded in the past cannot be retrieved and decrypted should long-term secret keys or passwords be compromised in the future, even if the adversary actively interfered, for example via a man-in-the-middle attack.",
         "keywords": [
-            "common",
-            "work",
-            "port",
-            "For",
-            "including",
-            "communications",
-            "I",
-            "key",
-            "cannot",
-            "example",
-            "record",
-            "If",
-            "uses",
-            "secret",
             "TLS",
+            "cannot",
+            "common",
+            "communications",
+            "example",
+            "including",
+            "key",
+            "port",
             "protocols",
-            "should"
+            "record",
+            "secret",
+            "should",
+            "uses",
+            "work"
         ]
     },
     {
         "id": "116",
         "content": "Toward the goal of  \"secure network programming for the masses,\" the inventors of SNP conceived secure sockets as a high-level abstraction suitable for securing Internet applications. In 1993, they designed and built a prototype of SNP. Designed as an application sublayer on top of sockets, SNP provides a user interface closely resembling sockets.  This resemblance was by design so that security could be retrofitted into existing socket programs with only minor modifications. Also, with such a sublayer carefully designed and its implementation thoroughly debugged, it can be easily used by any Internet application that uses sockets for end-to-end communications. This is a natural idea in hindsight but, in 1993, it was novel and a major departure from mainstream network security research at that time.",
         "keywords": [
-            "applications",
-            "so",
-            "provides",
             "1",
-            "work",
             "application",
+            "applications",
             "communications",
-            "I",
-            "research",
-            "part",
+            "could",
             "design",
-            "secure",
             "designed",
             "end",
-            "could",
-            "uses",
+            "high",
             "interface",
-            "high"
+            "part",
+            "provides",
+            "research",
+            "secure",
+            "uses",
+            "work"
         ]
     },
     {
         "id": "117",
         "content": "The multiplexed signal is transmitted over a communication channel such as a cable. The multiplexing divides the capacity of the communication channel into several logical channels, one for each message signal or data stream to be transferred. A reverse process, known as demultiplexing, extracts the original channels on the receiver end.",
         "keywords": [
-            "multiple",
             "channel",
-            "original",
             "end",
             "known",
+            "multiple",
+            "original",
             "signal"
         ]
     },
@@ -1973,104 +1736,94 @@
         "id": "118",
         "content": "The initial perception of NFV was that virtualized capability should be implemented in data centers. This approach works in many \u2013 but not all \u2013 cases. NFV presumes and emphasizes the widest possible flexibility as to the physical location of the virtualized functions.",
         "keywords": [
-            "approach",
-            "possible",
-            "work",
-            "physical",
-            "location",
-            "cases",
-            "per",
-            "functions",
-            "function",
-            "\u2013",
             "NFV",
+            "approach",
+            "cases",
+            "function",
+            "functions",
+            "location",
+            "per",
+            "physical",
+            "possible",
+            "should",
             "virtualized",
-            "should"
+            "work"
         ]
     },
     {
         "id": "119",
         "content": "The initial perception of NFV was that virtualized capability should be implemented in data centers. This approach works in many \u2013 but not all \u2013 cases. NFV presumes and emphasizes the widest possible flexibility as to the physical location of the virtualized functions.",
         "keywords": [
-            "approach",
-            "possible",
-            "work",
-            "physical",
-            "location",
-            "cases",
-            "per",
-            "functions",
-            "function",
-            "\u2013",
             "NFV",
+            "approach",
+            "cases",
+            "function",
+            "functions",
+            "location",
+            "per",
+            "physical",
+            "possible",
+            "should",
             "virtualized",
-            "should"
+            "work"
         ]
     },
     {
         "id": "120",
         "content": "Because MVNOs are effectively defined by their lack of spectrum licenses, an MVNO necessarily will need to have agreements in place to access the network of at least one MNO. The type of MVNO is determined by how \"thick\" or \"thin\" a technological layer an MVNO adds over its access to its host MNO's network.",
         "keywords": [
-            "work",
             "defined",
-            "host"
+            "host",
+            "work"
         ]
     },
     {
         "id": "121",
         "content": "While the industry has seemingly standardized on VoLTE for the future, the demand for voice calls today has led LTE carriers to introduce circuit-switched fallback as a stopgap measure. When placing or receiving a voice call, LTE handsets will fall back to old 2G or 3G networks for the duration of the call.",
         "keywords": [
-            "standard",
-            "work",
             "back",
-            "While",
-            "set",
             "industry",
-            "When"
+            "set",
+            "standard",
+            "work"
         ]
     },
     {
         "id": "122",
         "content": "While the ITU has adopted recommendations for technologies that would be used for future global communications, they do not actually perform the standardization or development work themselves, instead relying on the work of other standard bodies such as IEEE, WiMAX Forum, and 3GPP.",
         "keywords": [
-            "standard",
-            "perform",
-            "form",
-            "work",
-            "per",
-            "For",
+            "actually",
             "communications",
-            "I",
             "end",
-            "While",
-            "would",
-            "do",
-            "actually"
+            "form",
+            "per",
+            "perform",
+            "standard",
+            "work",
+            "would"
         ]
     },
     {
         "id": "123",
         "content": "Machine to machine wireless networks can serve to improve the production and efficiency of machines, to enhance the reliability and safety of complex systems, and to promote the life-cycle management for key assets and products. By applying Prognostic and Health Management (PHM) techniques in machine networks, the following goals can be achieved or improved:",
         "keywords": [
-            "management",
-            "work",
-            "systems",
-            "key",
             "following",
-            "set"
+            "key",
+            "management",
+            "set",
+            "systems",
+            "work"
         ]
     },
     {
         "id": "124",
         "content": "Due to the nearness of the analytical resources to the end users, sophisticated analytical tools and Artificial Intelligence tools can run on the edge of the system. This placement at the edge helps to increase operational efficiency and is responsible for many advantages to the system.",
         "keywords": [
-            "so",
             "advantages",
-            "per",
-            "I",
-            "end",
-            "resources",
             "edge",
+            "end",
+            "per",
+            "resources",
             "users"
         ]
     },
@@ -2078,7 +1831,6 @@
         "id": "125",
         "content": "Virtual retinal display creates images that can be seen in ambient daylight and ambient room light. The VRD is considered a preferred candidate to use in a surgical display due to its combination of high resolution and high contrast and brightness. Additional tests show high potential for VRD to be used as a display technology for patients that have low vision.",
         "keywords": [
-            "so",
             "display",
             "high"
         ]
@@ -2087,85 +1839,71 @@
         "id": "126",
         "content": "Another disadvantage is that central computing relies heavily on the quality of administration and resources provided to its users.  Should the central computer be inadequately supported by any means (e.g. size of home directories, problems regarding administration), then your usage will suffer greatly.  The reverse situation, however, (i.e., a system supported better than your needs) is one of the key advantages to centralized computing.",
         "keywords": [
-            "so",
             "advantages",
-            "port",
-            "An",
-            "key",
-            "than",
-            "provided",
+            "computer",
+            "computing",
             "however",
+            "key",
+            "port",
+            "provided",
             "resources",
             "support",
-            "computer",
-            "users",
-            "computing"
+            "users"
         ]
     },
     {
         "id": "127",
         "content": "Information security is also a concern, and for this reason, a data center has to offer a secure environment that minimizes the chances of a security breach. A data center must, therefore, keep high standards for assuring the integrity and functionality of its hosted computer environment.",
         "keywords": [
-            "standard",
-            "so",
-            "form",
-            "must",
-            "there",
-            "I",
-            "function",
-            "integrity",
-            "secure",
             "computer",
+            "form",
+            "function",
+            "high",
             "host",
-            "high"
+            "integrity",
+            "must",
+            "secure",
+            "standard"
         ]
     },
     {
         "id": "128",
         "content": "RANAP signalling protocol resides in the control plane of Radio network layer of Iu interface in the UMTS (Universal Mobile Telecommunication System) protocol stack. Iu interface is the interface between RNC (Radio Network Controller) and CN (Core Network). nb. For Iu-ps transport RANAP is carried on SCTP if IP interface used on this.",
         "keywords": [
-            "work",
-            "port",
-            "For",
-            "I",
             "interface",
-            "signal"
+            "port",
+            "signal",
+            "work"
         ]
     },
     {
         "id": "129",
         "content": "Between the 1980s and the 2000s, the mobile phone has gone from being an expensive item used by the business elite to a pervasive,  personal communications tool for the general population. In most countries, mobile phones outnumber land-line phones, with fixed landlines numbering 1.3 billion but mobile subscriptions 3.3 billion at the end of 2007.",
         "keywords": [
-            "so",
             "1",
-            "per",
             "billion",
-            "general",
-            "most",
             "communications",
-            "I",
-            "fixed",
-            "end",
-            "out",
             "countries",
+            "end",
+            "fixed",
+            "general",
+            "mobile",
+            "most",
             "number",
-            "mobile"
+            "out",
+            "per"
         ]
     },
     {
         "id": "130",
         "content": "The first HSPA specifications supported increased peak data rates of up to 14 Mbit/s in the downlink and 5.76 Mbit/s in the uplink. It also reduced latency and provided up to five times more system capacity in the downlink and up to twice as much system capacity in the uplink compared with original WCDMA protocol.",
         "keywords": [
-            "so",
-            "link",
             "1",
-            "port",
-            "I",
-            "It",
-            "original",
-            "provided",
-            "do",
+            "link",
             "much",
+            "original",
+            "port",
+            "provided",
             "support"
         ]
     },
@@ -2173,160 +1911,141 @@
         "id": "131",
         "content": "The support of MIMO in combination with DC-HSDPA will allow operators deploying Release 7 MIMO to benefit from the DC-HSDPA functionality as defined in Release 8. While in Release 8 DC-HSDPA can only operate on adjacent carriers, Release 9 also allows that the paired cells can operate on two different frequency bands. Later releases allow the use of up to four carriers simultaneously.",
         "keywords": [
-            "so",
+            "Release",
             "allow",
             "allows",
-            "port",
-            "per",
-            "I",
-            "function",
-            "While",
-            "defined",
-            "support",
             "cell",
-            "Release",
-            "frequency"
+            "defined",
+            "frequency",
+            "function",
+            "per",
+            "port",
+            "support"
         ]
     },
     {
         "id": "132",
         "content": "In a primitive taxi system, when the taxi moved away from a first tower and closer to a second tower, the taxi driver manually switched from one frequency to another as needed.  If communication was interrupted due to a loss of a signal, the taxi driver asked the base station operator to repeat the message on a different frequency.",
         "keywords": [
+            "frequency",
             "per",
-            "I",
-            "If",
-            "signal",
-            "frequency"
+            "signal"
         ]
     },
     {
         "id": "133",
         "content": "Mobile phones communicate with cell towers that are placed to give coverage across a telephone service area, which is divided up into 'cells'. Each cell uses a different set of frequencies from neighboring cells, and will typically be covered by three towers placed at different locations. The cell towers are usually interconnected to each other and the phone network and the internet by wired connections. Due to bandwidth limitations each cell will have a maximum number of cell phones it can handle at once. The cells are therefore sized depending on the expected usage density, and may be much smaller in cities. In that case much lower transmitter powers are used to avoid broadcasting beyond the cell.",
         "keywords": [
-            "work",
-            "location",
+            "cell",
             "connect",
-            "there",
-            "I",
-            "small",
             "end",
-            "usually",
+            "location",
             "much",
-            "set",
             "number",
-            "uses",
             "service",
-            "cell"
+            "set",
+            "small",
+            "uses",
+            "usually",
+            "work"
         ]
     },
     {
         "id": "134",
         "content": "Consider a half-wave dipole designed to work with signals with wavelength  1\u00a0m, meaning the antenna would be approximately 50\u00a0cm from tip to tip. If the element has a length-to-diameter ratio of 1000, it will have an inherent impedance of about 63\u00a0ohms resistive. Using the appropriate transmission wire or balun, we match that resistance to ensure minimum signal reflection. Feeding that antenna with a current of 1\u00a0Ampere will require 63\u00a0Volts, and the antenna will radiate 63\u00a0Watts (ignoring losses) of radio frequency power. Now consider the case when the antenna is fed a signal with a wavelength of 1.25\u00a0m; in this case the current induced by the signal would arrive at the antenna's feedpoint out-of-phase with the signal, causing the net current to drop while the voltage remains the same. Electrically this appears to be a very high impedance. The antenna and transmission line no longer have the same impedance, and the signal will be reflected back into the antenna, reducing output. This could be addressed by changing the matching system between the antenna and transmission line, but that solution only works well at the new design frequency.",
         "keywords": [
-            "require",
-            "while",
-            "so",
             "1",
-            "longer",
-            "work",
-            "about",
-            "per",
-            "back",
-            "transmission",
-            "very",
-            "well",
-            "I",
-            "new",
-            "design",
-            "length",
-            "output",
-            "designed",
-            "would",
-            "out",
-            "could",
-            "If",
             "address",
-            "signal",
-            "high",
+            "antenna",
+            "back",
+            "could",
+            "design",
+            "designed",
             "frequency",
-            "antenna"
+            "high",
+            "length",
+            "longer",
+            "new",
+            "out",
+            "output",
+            "per",
+            "require",
+            "signal",
+            "transmission",
+            "well",
+            "while",
+            "work",
+            "would"
         ]
     },
     {
         "id": "135",
         "content": "While the industry has seemingly standardized on VoLTE for the future, the demand for voice calls today has led LTE carriers to introduce circuit-switched fallback as a stopgap measure. When placing or receiving a voice call, LTE handsets will fall back to old 2G or 3G networks for the duration of the call.",
         "keywords": [
-            "standard",
-            "work",
             "back",
-            "While",
-            "set",
             "industry",
-            "When"
+            "set",
+            "standard",
+            "work"
         ]
     },
     {
         "id": "136",
         "content": "Providers of fixed wireless broadband services typically provide equipment to customers and install a small antenna or dish somewhere on the roof. This equipment is usually deployed as a service and maintained by the company providing that service. Fixed wireless services have become particularly popular in many rural areas where cable, DSL or other typical home internet services are not available.",
         "keywords": [
+            "antenna",
             "available",
-            "so",
-            "where",
-            "equipment",
-            "part",
-            "small",
-            "fixed",
-            "usually",
-            "services",
             "company",
+            "equipment",
+            "fixed",
+            "part",
             "service",
-            "antenna"
+            "services",
+            "small",
+            "usually",
+            "where"
         ]
     },
     {
         "id": "137",
         "content": "Through the introduction of sophisticated methods of coding and transmitting data, EDGE delivers higher bit-rates per radio channel, resulting in a threefold increase in capacity and performance compared with an ordinary GSM/GPRS connection.",
         "keywords": [
-            "so",
-            "perform",
-            "form",
-            "performance",
-            "connect",
-            "per",
             "channel",
+            "connect",
+            "form",
+            "high",
             "methods",
-            "high"
+            "per",
+            "perform",
+            "performance"
         ]
     },
     {
         "id": "138",
         "content": "Original standardization work for LTE-Advanced was done as part of 3GPP Release 10, which was frozen in April 2011. Trials were based on pre-release equipment. Major vendors support software upgrades to later versions and ongoing improvements.",
         "keywords": [
-            "standard",
-            "so",
             "1",
-            "work",
-            "port",
-            "software",
+            "Release",
+            "end",
             "equipment",
             "part",
-            "versions",
-            "end",
-            "do",
+            "port",
+            "software",
+            "standard",
             "support",
-            "Release"
+            "versions",
+            "work"
         ]
     },
     {
         "id": "139",
         "content": "Telia Broadband was relaunched in 2008 because of the need for TeliaSonera to offer both mobile and broadband in all of their home markets (Sweden, Norway, Denmark and Finland). Telia Broadband was the first operator to launch digital TV with their broadband at no extra cost. Stofa is mainly a cable TV operator, but also supplies broadband via the cable TV network.",
         "keywords": [
-            "so",
             "because",
-            "work",
-            "per",
             "both",
-            "mobile"
+            "mobile",
+            "per",
+            "work"
         ]
     },
     {
@@ -2334,8 +2053,6 @@
         "content": "The ThunderBolt shipped with Android 2.2 (Froyo) and it was later updated in September 2011 to Android 2.3 (Gingerbread).  In early February 2013, the ThunderBolt was updated to Android 4.0.4 (Ice Cream Sandwich) and Sense 3.6.",
         "keywords": [
             "1",
-            "An",
-            "I",
             "early"
         ]
     },
@@ -2343,45 +2060,37 @@
         "id": "141",
         "content": "ETSI\u2019s standardization activities are organized around sectors: Home & Office, Better Living with ICT, Content Delivery, Networks, Wireless Systems, Transportation, Connecting Things, Interoperability, Public Safety and Security. Technical activities are carried out in the different ETSI technical groups (Technical Committee (TC), ETSI Project (EP), ETSI Partnership Project (EPP), Industry Specification Group (ISG), and Special Committee (SC).",
         "keywords": [
-            "standard",
-            "work",
-            "port",
-            "per",
-            "very",
-            "I",
+            "ETSI",
             "Project",
             "out",
-            "ETSI"
+            "per",
+            "port",
+            "standard",
+            "work"
         ]
     },
     {
         "id": "142",
         "content": "In addition to wholly owned subsidiaries in Europe and North America, the company is expanding its global reach through strategic alliances with mobile and multimedia service providers in Asia-Pacific and Europe. NTT Docomo is listed on the Tokyo (9437), London (NDCM), and New York (DCM) stock exchanges.",
         "keywords": [
-            "who",
-            "exchange",
-            "I",
-            "As",
-            "do",
             "company",
+            "exchange",
+            "mobile",
             "service",
-            "mobile"
+            "who"
         ]
     },
     {
         "id": "143",
         "content": "At the beginning of WWII Norway declared itself a neutral state. However, despite their neutral status Germany invaded Norway, assisted by a small pro-Nazi socialist party led by Vidkun Quisling. Oslo was quickly occupied after valiant efforts by the overmatched defenders. Oslo remained occupied throughout the war until the Nazi retreat in 1944. However, the occupying troops were harried by saboteurs and other acts of resistance throughout the occupation.",
         "keywords": [
-            "so",
             "1",
-            "I",
-            "part",
-            "small",
-            "end",
-            "out",
-            "after",
             "However",
-            "itself"
+            "end",
+            "itself",
+            "out",
+            "part",
+            "small"
         ]
     }
 ]
