@@ -54,18 +54,28 @@ def gen_large_prime(bits):
             return num
 
 def gen_two_large_prime(bits):
-    p = gen_large_prime(bits)
-    while True:
-        q = gen_large_prime(bits)
-        while q != p:
-            return p, q
+    while True: 
+        p = gen_large_prime(bits)
+        while True:
+            q = gen_large_prime(bits)
+            while q != p:
+                return p, q
 
+def gen_two_safe_prime(bits):
+    while True: 
+        p = gen_large_prime(bits)
+        if is_prime((p-1)//2):
+            while True:
+                q = gen_large_prime(bits)
+                if is_prime((q-1)//2):
+                    while q != p:
+                        return p, q
 
 def main():
-    
     bits = int(input())
-    p = gen_large_prime(bits)
-    print(p)
+    # p, q = gen_two_safe_prime(bits)
+    # print(p)
+    # print(q)
     
 
 if __name__ == '__main__':
