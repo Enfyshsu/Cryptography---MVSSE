@@ -4,6 +4,8 @@ from .generator import generators
 import time
 import random
 
+
+# Reference: https://github.com/oleiba/RSA-accumulator
 '''
 p, q are 512 bits safe prime
 N = p*q
