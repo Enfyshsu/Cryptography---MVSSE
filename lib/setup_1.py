@@ -71,6 +71,8 @@ if __name__ == '__main__':
     print("p = ", p)
     print("g = ", g)
     print("gi = ", gi) # Important : remember to remove gi[b+1]
+    print("S = ", S)
+    print("b = ", b)
     print("s = ", s)
 
     # user
