@@ -19,7 +19,7 @@ def calculate_gi(g, a, b, p):
         exponent = (exponent * a) % int(p)
     return gi
 
-def calculate_s(g):
+def calculate_s(g, p):
     gamma = secrets.randbits(int(p).bit_length())
     while int(gamma) >= int(p) or int(gamma) < 2**128 :
         gamma = secrets.randbits(int(p).bit_length())
@@ -60,7 +60,7 @@ if __name__ == '__main__':
     S = [1, 2, 3, 4, 5, 6]
     G, p, g, a = init()
     gi = calculate_gi(g, a, b, p)       # access g_k by gi[k]
-    gamma, s = calculate_s(g)
+    gamma, s = calculate_s(g, p)
     di = calculate_private_key(gi, gamma, b)   # access d_k by di[k] 
     t, K, Hdr = calculate_t_K_Hdr(G, g, p, b, gi, s, S)
 
