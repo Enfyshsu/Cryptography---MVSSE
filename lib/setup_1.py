@@ -1,16 +1,14 @@
 from charm.toolbox.pairinggroup import PairingGroup,ZR,G1,G2,GT,pair
-import random
+import secrets
 
-b = 20
-S = [1, 3, 4, 5, 8, 9]
 
 def init():
     G = PairingGroup('SS512')
     p = G.order()
     g = G.random(G1)
-    a = random.getrandbits(int(p).bit_length())
+    a = secrets.randbits(int(p).bit_length())
     while int(a) >= int(p) or int(a) < 2**128 :
-        a = random.getrandbits(int(p).bit_length())
+        a = secrets.randbits(int(p).bit_length())
     return G, p, g, a
 
 def calculate_gi(g, a, b, p):
@@ -22,9 +20,9 @@ def calculate_gi(g, a, b, p):
     return gi
 
 def calculate_s(g):
-    gamma = random.getrandbits(int(p).bit_length())
+    gamma = secrets.randbits(int(p).bit_length())
     while int(gamma) >= int(p) or int(gamma) < 2**128 :
-        gamma = random.getrandbits(int(p).bit_length())
+        gamma = secrets.randbits(int(p).bit_length())
 
     s = g ** gamma
     return gamma, s
@@ -42,13 +40,13 @@ def calculate_c1(b, gi, s, S, t):
     return tmp ** t
 
 def calculate_t_K_Hdr(G, g, p, b, gi, s, S):
-    t = random.getrandbits(int(p).bit_length())
+    t = secrets.randbits(int(p).bit_length())
     while int(t) >= int(p) or int(t) < 2**128 :
-        t = random.getrandbits(int(p).bit_length())
+        t = secrets.randbits(int(p).bit_length())
    
     K = G.pair_prod(gi[b+1], g) 
     K2 = G.pair_prod(gi[b], gi[1])
-    assert K == K2, "pairing" 
+    assert K == K2, "pairing property" 
 
     c0 = g ** t
     c1 = calculate_c1(b, gi, s, S, t)
@@ -58,6 +56,8 @@ def calculate_t_K_Hdr(G, g, p, b, gi, s, S):
 
 
 if __name__ == '__main__':
+    b = 20
+    S = [1, 2, 3, 4, 5, 6]
     G, p, g, a = init()
     gi = calculate_gi(g, a, b, p)       # access g_k by gi[k]
     gamma, s = calculate_s(g)
