@@ -52,20 +52,32 @@ def prf3(key, x):
 def get_label_index():
     K = 21
     k1 = "wvnjeronvjeorvneorve"
+    k2 = "dhihsuqohcnxldslenfysqkc"
     k3 = "vrewhovbejrbviheorbvjwqbvhieofbuvew"
     keyword_list = read_json('keyword_list.json')
     keyword_num = len(keyword_list)
-
+    document_list = read_json('Document.json')
+    
     label_list = []
+    index_bar_list = []
     for i in range(keyword_num):
         for j in range(i, keyword_num):
+            index = ""
             w1 = keyword_list[i]
             w2 = keyword_list[j]
             token = prf1(k1, w1+w2, order_of_G)
             r = prf3(k3, token)
             label = (K**((token * r) % 37)) % order_of_G
             label_list.append(label)
-    print(len(label_list))
+            for document in document_list:
+                if w1 and w2 in document["keywords"]:
+                    index += '1'
+                else: index += '0'
+            prf2v = prf2(k2, w1+w2)
+            index = int(index)
+            # want to XOR index and prf2
+            # index = index ^ prf2v
+            index_bar_list.append(index)
 
 def main():
     get_label_index()
