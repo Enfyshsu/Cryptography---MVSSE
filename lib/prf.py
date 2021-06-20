@@ -1,3 +1,4 @@
+from charm.toolbox.pairinggroup import PairingGroup,ZR,G1,G2,GT,pair
 import hmac
 import hashlib
 import binascii
@@ -6,7 +7,7 @@ from .prime import gen_large_prime
 from .aesCipher import AESCipher
 from .json_function import read_json
 
-order_of_G = 16798108731015832284940804142231733909759579603404752749028378864165570215949
+order_of_G = PairingGroup('SS512').order()
 
 # Reference: https://stackoverflow.com/questions/39767297/how-to-use-sha256-hmac-in-python-code
 '''
