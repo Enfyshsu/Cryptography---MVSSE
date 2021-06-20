@@ -24,6 +24,11 @@ RSA_PRIME_SIZE = 1024
 v = 2
 
 def setup(prime_size=RSA_PRIME_SIZE, n=None, g=None):
+    # Setup for RSA accumulator.
+    # For owner purpose, it is necessary to randomly generate two primes, q and p, to compute n = q * p. Next generate a 
+    # g under Zn
+    # For client purpose, since both n and g are public in our scheme, there is no need to re-generate n and g.
+
     if n == None and g == None:
         p, q = gen_two_large_prime(prime_size)
         n = q * p
@@ -32,10 +37,14 @@ def setup(prime_size=RSA_PRIME_SIZE, n=None, g=None):
     return n, g
 
 def cipher_to_prime(cipher):
+    # Hash (i, C_i) to a prime number, for example (3, "This is cipher") -> 31
+    
     prime, nonce= _hash_to_prime(_hash(k=cipher['id'], m=_hash(m=cipher['ciphertext'])))
     return prime
 
 def cipher_to_prime_list(cipher_list):
+    # Hash a list of (i, C_i) to a list of prime number
+    
     #print(cipher_list)
     rev = []
     for cipher in cipher_list:
@@ -44,6 +53,8 @@ def cipher_to_prime_list(cipher_list):
     return rev
 
 def accumulate(primeList, N):
+    # Given a list of prime number, calculator its accumulating value module N
+    
     exp = 1
     for prime in primeList:
         exp *= prime
@@ -51,11 +62,17 @@ def accumulate(primeList, N):
     return accE 
 
 def verify(piJ, j, accE, N):
+    # To verify if j belongs to set E
+    
     if pow(piJ, j, N) == accE:
         return True
     return False
 
 def _hash_to_length(x, bit_length):
+    # Hash integer x into another integer of length bit_length
+    # Note that there might be some 0s in the head of return value, 
+    # so its bit length will be a little smaller than bit_length
+
     block_size = hashlib.sha256().block_size
 
     H = BitArray('')
@@ -68,6 +85,10 @@ def _hash_to_length(x, bit_length):
     return int(H.bin[:bit_length], 2)
 
 def _hash_to_prime(x, bit_length=3*LAMBDA, nonce=0):
+    # Hash integer x into a prime number of length 3 * LAMBDA, where LAMBDA is a secure parameter
+    # Note that there might be some 0s in the head of return value, 
+    # so its bit length will be a little smaller than 3 * LAMBDA
+    
     while True:    
         num = _hash_to_length(x+nonce, bit_length)
         if is_prime(num) == True:
@@ -76,6 +97,10 @@ def _hash_to_prime(x, bit_length=3*LAMBDA, nonce=0):
     return hashlib.md5(m.encode('utf-8')).hexdigest()
 
 def _hash(label=None, k=None, m=None, bit_length=LAMBDA):
+    # Hash function for our RSA accumulator, LAMBDA is a secure parameter
+    # To calculate the value of AC, use _hash(k=..., m=...) and _hash(m=...)
+    # To calculate the value of AI, use _hash(label=..., k=..., m=...)
+
     m_to_hash = ""
     m_to_hash += str(label) if label != None else ""
     m_to_hash += str(k) if k != None else ""
