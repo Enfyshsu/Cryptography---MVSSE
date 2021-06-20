@@ -49,37 +49,56 @@ def prf3(key, x):
     h = prf1(key, key, order_of_G)
     return (x * h) % order_of_G
 
-def main():
-    key = "abcde"
-    data = "applebanana"
-    '''
-    p = gen_large_prime(1024)
-    h1 = prf1(key, data, p)
-    h2 = prf2(key, data)
-    
-    print(h1)
-    print(h2)
-    '''
+def get_label_index():
     K = 21
     k1 = "wvnjeronvjeorvneorve"
     k3 = "vrewhovbejrbviheorbvjwqbvhieofbuvew"
     keyword_list = read_json('keyword_list.json')
     keyword_num = len(keyword_list)
-    print(keyword_num)
-    #print(keyword_list)
-    start = time.time()
+
+    label_list = []
     for i in range(keyword_num):
         for j in range(i, keyword_num):
             w1 = keyword_list[i]
             w2 = keyword_list[j]
-            print(w1, w2, w1+w2)
             token = prf1(k1, w1+w2, order_of_G)
             r = prf3(k3, token)
-            print("token", token)
-            print("r", r)
-            print((K**((token * r) % 37)) % order_of_G)
-    end = time.time()
-    print(end-start)
+            label = (K**((token * r) % 37)) % order_of_G
+            label_list.append(label)
+    print(len(label_list))
+
+def main():
+    get_label_index()
+    # key = "abcde"
+    # data = "applebanana"
+    # '''
+    # p = gen_large_prime(1024)
+    # h1 = prf1(key, data, p)
+    # h2 = prf2(key, data)
+    
+    # print(h1)
+    # print(h2)
+    # '''
+    # K = 21
+    # k1 = "wvnjeronvjeorvneorve"
+    # k3 = "vrewhovbejrbviheorbvjwqbvhieofbuvew"
+    # keyword_list = read_json('keyword_list.json')
+    # keyword_num = len(keyword_list)
+    # print(keyword_num)
+    # #print(keyword_list)
+    # start = time.time()
+    # for i in range(keyword_num):
+    #     for j in range(i, keyword_num):
+    #         w1 = keyword_list[i]
+    #         w2 = keyword_list[j]
+    #         print(w1, w2, w1+w2)
+    #         token = prf1(k1, w1+w2, order_of_G)
+    #         r = prf3(k3, token)
+    #         print("token", token)
+    #         print("r", r)
+    #         print((K**((token * r) % 37)) % order_of_G)
+    # end = time.time()
+    # print(end-start)
     
         
 
