@@ -52,14 +52,26 @@ def cipher_to_prime_list(cipher_list):
         rev.append(prime)
     return rev
 
+def label_index_to_prime_list(l_i_list, n):
+    # Hash a label_index to a list of prime number
+
+    rev = []
+    for l in l_i_list:
+        label = l['label']
+        for k in n:
+            index_bar = l['index_bar'][k]
+            prime, nonce= _hash_to_prime(_hash(label=label, k=n, m=index_bar))
+            rev.append(prime)
+    return rev
+
 def accumulate(primeList, N):
     # Given a list of prime number, calculator its accumulating value module N
     
     exp = 1
     for prime in primeList:
         exp *= prime
-    accE = pow(v, exp, N)
-    return accE 
+    acc = pow(v, exp, N)
+    return acc
 
 def verify(piJ, j, accE, N):
     # To verify if j belongs to set E
@@ -89,7 +101,7 @@ def _hash_to_prime(x, bit_length=3*LAMBDA, nonce=0):
     # Note that there might be some 0s in the head of return value, 
     # so its bit length will be a little smaller than 3 * LAMBDA
     
-    while True:    
+    while True:
         num = _hash_to_length(x+nonce, bit_length)
         if is_prime(num) == True:
             return num, nonce
@@ -146,15 +158,19 @@ def _test():
     print(ver)
 
 def _test_cipher():
-    data=read_json("./Document.json")
-    #print(data)
+    data = read_json("./Document.json")
     cipher = encryptContent(data)
     n, g = setup()
     cipher_prime_list = cipher_to_prime_list(cipher)
+    # label_index = get_label_index()
+    label_index = [{"id": "0", "label": (3,5), "index_bar": "0011011010101"},{"id": "1", "label": (2,35), "index_bar": "1111101010110"}]
+    label_index_prime_list = label_index_to_prime_list(label_index, len(data))
     #print(cipher_prime_list)
-
     Ac = accumulate(cipher_prime_list, n)
+    Ai = accumulate(label_index_prime_list, n)
+
     print(Ac)
+    print(Ai)
     l = len(cipher)
     for _ in range(5):
         Id = random.randint(1, l)
