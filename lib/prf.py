@@ -18,7 +18,7 @@ param:
     p: int
     This function will map (key, m) to a integer in Zp
 '''
-def prf1(key, m, p):
+def prf1(key, m, p=order_of_G):
     mod_length = p.bit_length()
     sha256 = hashlib.sha256()
     
