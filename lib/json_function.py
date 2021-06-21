@@ -6,13 +6,17 @@ g = G.random(G1)
 G_CLASS_NAME = type(g)
 del g
 
-def read_json(file_name, is_binary=False):
+def read_json(file_name, is_binary=False, is_G=False):
     with open(file_name) as f:
         data = json.load(f)
         if is_binary:
             for d in data:
                 if "ciphertext" in d.keys():
                     d["ciphertext"] = d["ciphertext"].encode()
+        if is_G:
+            for d in data["gi"]:
+                if "element" in d.keys() and d["element"] != None:
+                    d["element"] = G.deserialize(d["element"].encode())
     return data
 
 def write_json(file_name, doc, is_binary=False, is_G=False):
@@ -24,7 +28,6 @@ def write_json(file_name, doc, is_binary=False, is_G=False):
 
 class MyEncoder(json.JSONEncoder):
     def default(self, obj):
-        print(G_CLASS_NAME)
         if isinstance(obj, bytes):
             return obj.decode();
         if isinstance(obj, G_CLASS_NAME):
