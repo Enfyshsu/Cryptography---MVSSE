@@ -22,6 +22,8 @@ SAFE_PRIME_P = 38979050847914854356790182417259558638392648800762766414381663616
 SAFE_PRIME_Q = 606223194186276537666306594388855936281143220688229008170872654528545826992040969384414188105471643244737173125502614496393070063279978450512383976343603
 LAMBDA = 128
 RSA_PRIME_SIZE = 1024
+G = PairingGroup('SS512')
+G_element = G.random(G1)
 
 v = 2
 
@@ -90,14 +92,14 @@ def _hash_to_length(x, bit_length):
 
     block_size = hashlib.sha256().block_size
 
-    H = BitArray('')
+    H = ""
     cnt = 0
     while cnt * block_size * 4 < bit_length:
-        tmp = hashlib.sha256(str(x + cnt).encode()).digest()
-        H += BitArray(bytes=tmp)
+        tmp = hashlib.sha256(str(x + cnt).encode()).hexdigest()
+        H += tmp
         cnt += 1
     
-    return int(H.bin[:bit_length], 2)
+    return int(bin(int(H, 16))[:bit_length], 2)
 
 def _hash_to_prime(x, bit_length=3*LAMBDA, nonce=0):
     # Hash integer x into a prime number of length 3 * LAMBDA, where LAMBDA is a secure parameter
@@ -116,28 +118,28 @@ def _hash(label=None, k=None, m=None, bit_length=LAMBDA):
     # To calculate the value of AC, use _hash(k=..., m=...) and _hash(m=...)
     # To calculate the value of AI, use _hash(label=..., k=..., m=...)
     
-    G = PairingGroup('SS512')
-    g = G.random(G1)
 
     m_to_hash = ""
     if type(label) == str:
         m_to_hash += str(label)
-    elif type(label) ==  type(g):
+    elif type(label) ==  type(G_element):
         m_to_hash += G.serialize(label).decode()
     m_to_hash += str(k) if k != None else ""
     m_to_hash += str(m) if m != None else ""    
     #print("m to hash ", m_to_hash) 
+
     if m_to_hash == '':
         return None
     
-    h = BitArray(hex=hashlib.sha256(m_to_hash.encode()).hexdigest())
+    h = hashlib.sha256(m_to_hash.encode()).hexdigest()
+    
     #print(h)
-    if len(h.bin) > bit_length:
-        h = h.bin[len(h.bin) - bit_length:]
+    if len(h) * 4 > bit_length:
+        h = bin(int(h, 16))[:bit_length]
         #print(h)
         return int(h, 2)
     
-    return int(h.bin, 2)
+    return int(h, 16)
 
 '''
 Below are testing functions
