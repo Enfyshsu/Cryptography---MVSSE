@@ -9,8 +9,10 @@ import time
 import random
 import secrets
 
+from charm.toolbox.pairinggroup import PairingGroup,ZR,G1,G2,GT,pair
 # test
 # Reference: https://github.com/oleiba/RSA-accumulator
+
 '''
 p, q are 512 bits safe prime
 N = p*q
@@ -22,6 +24,7 @@ LAMBDA = 128
 RSA_PRIME_SIZE = 1024
 
 v = 2
+
 
 def setup(prime_size=RSA_PRIME_SIZE, n=None, g=None):
     # Setup for RSA accumulator.
@@ -112,9 +115,15 @@ def _hash(label=None, k=None, m=None, bit_length=LAMBDA):
     # Hash function for our RSA accumulator, LAMBDA is a secure parameter
     # To calculate the value of AC, use _hash(k=..., m=...) and _hash(m=...)
     # To calculate the value of AI, use _hash(label=..., k=..., m=...)
+    
+    G = PairingGroup('SS512')
+    g = G.random(G1)
 
     m_to_hash = ""
-    m_to_hash += str(label) if label != None else ""
+    if type(label) == str:
+        m_to_hash += str(label)
+    elif type(label) ==  type(g):
+        m_to_hash += G.serialize(label).decode()
     m_to_hash += str(k) if k != None else ""
     m_to_hash += str(m) if m != None else ""    
     #print("m to hash ", m_to_hash) 
@@ -142,6 +151,17 @@ def _test_hash():
     print(h, nonce)
     h, nonce = _hash_to_prime(x=_hash(label="xu", k=3, m="rmp4m3", bit_length=1024), bit_length=1024)
     print(h, nonce)
+    
+    G = PairingGroup('SS512')
+    g  = G.random(G1)
+    g1 = g**2
+    g2 = g + g
+    print("g1 == g2 ", g1 == g2)
+    h1 = _hash(label=g1, k=234, m=1)
+    h2 = _hash(label=g2, k=234, m=1)
+    print("h1 is ", h1)
+    print("h2 is ", h2)
+    print(h1 == h2)
 
 def _test():
     p, q = gen_two_large_prime(128)
@@ -187,8 +207,8 @@ def _test_cipher():
 
 def main():
     #_test()
-    #_test_hash()
-    _test_cipher()
+    _test_hash()
+    #_test_cipher()
 
 if __name__ == '__main__':
     main()
