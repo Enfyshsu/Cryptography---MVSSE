@@ -21,7 +21,7 @@ v =
 SAFE_PRIME_P = 3897905084791485435679018241725955863839264880076276641438166361665067393589461636507194799807972292904524315477069113706553182713061050518933782432177067
 SAFE_PRIME_Q = 606223194186276537666306594388855936281143220688229008170872654528545826992040969384414188105471643244737173125502614496393070063279978450512383976343603
 LAMBDA = 64
-RSA_PRIME_SIZE = 256
+RSA_PRIME_SIZE = 512
 G = PairingGroup('SS512')
 G_element = G.random(G1)
 
@@ -54,17 +54,16 @@ def cipher_to_prime_list(cipher_list):
         rev.append(prime)
     return rev
 
-def label_index_to_prime_list(l_i_list, n):
+def label_index_to_prime_list(l_i_list, doc_length):
     # Hash a label_index to a list of prime number
 
     rev = []
     for l in l_i_list:
         label = l['label']
-        print(label)
-        for k in range(0, n):
+        for k in range(0, doc_length):
             index_bar = l['index_bar'][k]
-            #prime, nonce= _hash_to_prime(_hash(label=label, k=k, m=index_bar))
-            prime = _hash(label=label, k=k, m=index_bar)
+            prime, nonce= _hash_to_prime(_hash(label=label, k=k, m=index_bar))
+            #prime = _hash_to_prime(random.randint(1, 10000000))
             rev.append(prime)
     return rev
 
@@ -186,11 +185,11 @@ def _test_cipher():
     label_index = read_json("./Index.json", is_G=True)
     label_index_prime_list = label_index_to_prime_list(label_index, len(data))
     # Ac = accumulate(cipher_prime_list, g, n)
-    print("Now to accumulate")
-    Ai = accumulate(label_index_prime_list, g, n)
+    #print("Now to accumulate")
+    #Ai = accumulate(label_index_prime_list, g, n)
 
     # print(Ac)
-    print(Ai)
+    #print(Ai)
     '''
     l = len(cipher)
     for _ in range(5):
