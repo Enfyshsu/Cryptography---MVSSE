@@ -23,9 +23,10 @@ def main():
     #words = sorted(words.items(), key=lambda x: x[1], reverse=False)
     cnt = 0
     for w in words:
-        if words[w] >=5 and words[w] <= 10:
+        if words[w] >=15 and words[w] <= 20:
             keyword.append(w)
             cnt += 1
+    #print(cnt)
     keyword = read_json("keyword_list.json")
     for d in data:
         d['keywords'] = []
@@ -33,7 +34,7 @@ def main():
             if w in d['content']:
                 d['keywords'].append(w)
     keyword.sort()
-    #write_json("keyword_list.json", keyword) 
+    write_json("keyword_list.json", keyword) 
     write_json(file_name, data)
     
 if __name__ == '__main__':
