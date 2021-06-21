@@ -63,7 +63,8 @@ def label_index_to_prime_list(l_i_list, n):
         label = l['label']
         for k in range(0, n):
             index_bar = l['index_bar'][k]
-            prime, nonce= _hash_to_prime(_hash(label=label, k=n, m=index_bar))
+            prime, nonce= _hash_to_prime(_hash(label=label, k=k, m=index_bar))
+            print(prime.bit_length())
             rev.append(prime)
     return rev
 
@@ -71,11 +72,8 @@ def accumulate(primeList, N):
     # Given a list of prime number, calculator its accumulating value module N
     
     acc = 1
-    # exp = 1
     for prime in primeList:
         acc *= pow(v, prime, N)
-        # exp *= prime
-    # acc = pow(v, exp, N)
     return acc
 
 def verify(piJ, j, accE, N):

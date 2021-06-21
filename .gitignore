@@ -12,3 +12,6 @@
 test.*
 masterkey
 Cipher.json
+
+*_info.json
+Index.json
