@@ -20,13 +20,10 @@ v =
 '''
 SAFE_PRIME_P = 3897905084791485435679018241725955863839264880076276641438166361665067393589461636507194799807972292904524315477069113706553182713061050518933782432177067
 SAFE_PRIME_Q = 606223194186276537666306594388855936281143220688229008170872654528545826992040969384414188105471643244737173125502614496393070063279978450512383976343603
-LAMBDA = 128
-RSA_PRIME_SIZE = 1024
+LAMBDA = 64
+RSA_PRIME_SIZE = 256
 G = PairingGroup('SS512')
 G_element = G.random(G1)
-
-v = 2
-
 
 def setup(prime_size=RSA_PRIME_SIZE, n=None, g=None):
     # Setup for RSA accumulator.
@@ -63,20 +60,21 @@ def label_index_to_prime_list(l_i_list, n):
     rev = []
     for l in l_i_list:
         label = l['label']
+        print(label)
         for k in range(0, n):
             index_bar = l['index_bar'][k]
-            prime, nonce= _hash_to_prime(_hash(label=label, k=k, m=index_bar))
-            print(prime.bit_length())
+            #prime, nonce= _hash_to_prime(_hash(label=label, k=k, m=index_bar))
+            prime = _hash(label=label, k=k, m=index_bar)
             rev.append(prime)
     return rev
 
-def accumulate(primeList, N):
+def accumulate(primeList, v, N):
     # Given a list of prime number, calculator its accumulating value module N
     
-    acc = 1
     for prime in primeList:
-        acc *= pow(v, prime, N)
-    return acc
+        print(v, prime, N)
+        v = pow(v, prime, N)
+    return v
 
 def verify(piJ, j, accE, N):
     # To verify if j belongs to set E
@@ -169,28 +167,31 @@ def _test():
     p, q = gen_two_large_prime(128)
     N = p*q
     E = [random.randint(1, N) for i in range(10)]
-    accE = accumulate(E, N)
+    #accE = accumulate(E, N)
     #accE = accumulate([2,5,7], N)
     #for i in E:
     #    print(i)
-    print("accE is ", accE)
-    piJ = accumulate([E[i] for i in range(10) if i != 7], N)
+    #print("accE is ", accE)
+    #piJ = accumulate([E[i] for i in range(10) if i != 7], N)
     print("piJ is ", piJ)
-    ver = verify(piJ, E[7], accE, N)
+    #ver = verify(piJ, E[7], accE, N)
     print(ver)
 
 def _test_cipher():
     data = read_json("./Document.json")
-    # cipher = encryptContent(data)
+    #cipher = encryptContent(data, "sdnvjiefv")
     n, g = setup()
+    print(n, g)
     # cipher_prime_list = cipher_to_prime_list(cipher)
-    label_index = read_json("./Index.json")
+    label_index = read_json("./Index.json", is_G=True)
     label_index_prime_list = label_index_to_prime_list(label_index, len(data))
-    # Ac = accumulate(cipher_prime_list, n)
-    Ai = accumulate(label_index_prime_list, n)
+    # Ac = accumulate(cipher_prime_list, g, n)
+    print("Now to accumulate")
+    Ai = accumulate(label_index_prime_list, g, n)
 
     # print(Ac)
     print(Ai)
+    '''
     l = len(cipher)
     for _ in range(5):
         Id = random.randint(1, l)
@@ -203,7 +204,7 @@ def _test_cipher():
         print(verify(pi, id_prime, Ac, n))
         id_prime = cipher_to_prime({"id": str(Id), "ciphertext": "abcde"})
         print(verify(pi, id_prime, Ac, n))
-        
+    ''' 
 
 def main():
     #_test()
