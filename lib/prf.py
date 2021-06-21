@@ -1,4 +1,5 @@
 from charm.toolbox.pairinggroup import PairingGroup,ZR,G1,G2,GT,pair
+from bitstring import BitArray
 import hmac
 import hashlib
 import binascii
@@ -73,11 +74,10 @@ def get_label_index():
                 if w1 and w2 in document["keywords"]:
                     index += '1'
                 else: index += '0'
-            prf2v = prf2(k2, w1+w2)
-            index = int(index)
-            # want to XOR index and prf2
-            # index = index ^ prf2v
+            # index_bar = index ^ prf2v
+            print("index",index)
             index_bar_list.append(index)
+    print(len(index_bar_list))
 
 def main():
     get_label_index()
