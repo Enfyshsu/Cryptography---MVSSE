@@ -14,9 +14,15 @@ def read_json(file_name, is_binary=False, is_G=False):
                 if "ciphertext" in d.keys():
                     d["ciphertext"] = d["ciphertext"].encode()
         if is_G:
-            for d in data["gi"]:
-                if "element" in d.keys() and d["element"] != None:
-                    d["element"] = G.deserialize(d["element"].encode())
+            if type(data) == dict:
+                for d in data["gi"]:
+                    if "element" in d.keys() and d["element"] != None:
+                        d["element"] = G.deserialize(d["element"].encode())
+            elif type(data) == list:
+                for d in data:
+                    if "label" in d.keys():
+                        d["label"] = G.deserialize(d["label"].encode())
+
     return data
 
 def write_json(file_name, doc, is_binary=False, is_G=False):
