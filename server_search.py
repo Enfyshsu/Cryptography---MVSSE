@@ -1,4 +1,5 @@
 from lib.json_function import read_json, write_json
+from bitstring import BitArray
 
 def main():
     Index_path = "Index.json"
@@ -11,11 +12,26 @@ def main():
     query = read_json(query_path, is_G=True)
 
     label = query['label']
-    print("label is ", label)
+    pad = query['pad']
+    #print("label is ", label)
+    rev_doc_id = []
     for i in Index:
         #print(type(i["label"]))
         if i["label"] == label:
-            print(i)
+            #print(i)
+            index_bar = i['index_bar']
+            doc_length = len(index_bar)
+            index = (BitArray(bin=index_bar) ^ BitArray(bin=pad[:doc_length])).bin
+            for i in range(len(index)):
+                if index[i] == '1':
+                    rev_doc_id.append(i)
+
+    rev_doc = []
+    for i in rev_doc_id:
+        rev_doc.append(Cipher[i])
+
+    result_path = "result.json"
+    write_json(result_path, rev_doc, is_binary=True)
 
 if __name__ == "__main__":
     main()
