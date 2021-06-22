@@ -27,7 +27,8 @@ def main():
                     rev_doc_id.append(i)
 
     rev_doc = []
-    for i in rev_doc_id:
+    print("Result contains docment id, ", rev_doc_id)
+    for i in rev_doc_id:    
         rev_doc.append(Cipher[i])
 
     result_path = "result.json"
