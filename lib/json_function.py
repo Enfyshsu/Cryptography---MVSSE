@@ -15,9 +15,21 @@ def read_json(file_name, is_binary=False, is_G=False):
                     d["ciphertext"] = d["ciphertext"].encode()
         if is_G:
             if type(data) == dict:
-                for d in data["gi"]:
-                    if "element" in d.keys() and d["element"] != None:
-                        d["element"] = G.deserialize(d["element"].encode())
+                if "gi" in data.keys():
+                    for d in data["gi"]:
+                        if "element" in d.keys() and d["element"] != None:
+                            d["element"] = G.deserialize(d["element"].encode())
+                elif "Hdr" in data.keys():
+                    for i in range(len(data["Hdr"])):
+                        data["Hdr"][i] = G.deserialize(data["Hdr"][i].encode())
+                elif "Hdr_bar" in data.keys():
+                    for i in range(len(data["Hdr_bar"])):
+                        data["Hdr_bar"][i] = G.deserialize(data["Hdr_bar"][i].encode())
+                elif "di" in data.keys():
+                    data["di"] = G.deserialize(data["di"].encode())
+                elif "label" in data.keys():
+                    data["label"] = G.deserialize(data["label"].encode())
+
             elif type(data) == list:
                 for d in data:
                     if "label" in d.keys():
