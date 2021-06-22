@@ -12,10 +12,11 @@ def init():
     return G, p, g, a
 
 def calculate_gi(g, a, b, p):
-    gi = [g]
+    gi = []
+    gi.append(dict({"id": "0", "element": g}))
     exponent = int(a)
     for i in range(1, 2*b+1):
-        gi.append(g ** exponent)
+        gi.append(dict({"id": str(i), "element": g ** exponent}))
         exponent = (exponent * a) % int(p)
     return gi
 
@@ -30,13 +31,13 @@ def calculate_s(g, p):
 def calculate_private_key(gi, gamma, b):
     di = [None]
     for i in range(1, b+1):
-        di.append(gi[i] ** gamma)
+        di.append(gi[i]["element"] ** gamma)
     return di
 
 def calculate_c1(b, gi, s, S, t):
     tmp = s
     for j in S:
-        tmp = tmp * gi[b+1-j]
+        tmp = tmp * gi[b+1-j]["element"]
     return tmp ** t
 
 def calculate_t_K_Hdr(G, g, p, b, gi, s, S):
@@ -44,8 +45,8 @@ def calculate_t_K_Hdr(G, g, p, b, gi, s, S):
     while int(t) >= int(p) or int(t) < 2**128 :
         t = secrets.randbits(int(p).bit_length())
    
-    K = G.pair_prod(gi[b+1], g) ** t 
-    K2 = G.pair_prod(gi[b], gi[1]) ** t
+    K = G.pair_prod(gi[b+1]["element"], g) ** t
+    K2 = G.pair_prod(gi[b]["element"], gi[1]["element"]) ** t
     assert K == K2, "pairing property" 
 
     c0 = g ** t
@@ -55,7 +56,7 @@ def calculate_t_K_Hdr(G, g, p, b, gi, s, S):
     return t, K, Hdr
 
 
-if __name__ == '__main__':
+def main():
     b = 20
     S = [1, 2, 3, 4, 5, 6]
     G, p, g, a = init()
@@ -88,3 +89,5 @@ if __name__ == '__main__':
     print("K = ", K)
 
 
+if __name__ == '__main__':
+    main()

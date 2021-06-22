@@ -12,14 +12,16 @@ def read_masterkey(key_path=KEY_PATH):
 def gen_key_pair():
     master_key = read_masterkey()
     h = hashlib.sha256(master_key.encode()).hexdigest()
+    h += hashlib.sha256(h.encode()).hexdigest()
+    h += hashlib.sha256(h.encode()).hexdigest()
     length = len(h)
     #print(h)
     #print(length)
-    sep = length // 4
-    return h[:sep], h[sep:2*sep], h[2*sep:3*sep], h[3*sep:]
+    sep = length // 6
+    return h[:sep], h[sep:2*sep], h[2*sep:3*sep], h[3*sep:4*sep], h[4*sep:]
 
-def encryptContent(documentList):
-    master_key = read_masterkey()
+def encryptContent(documentList, k):
+    master_key = k
     AES = AESCipher(master_key)
     
     encryptList = []
@@ -31,8 +33,8 @@ def encryptContent(documentList):
 
     return encryptList
     
-def decryptContent(cipherList):
-    master_key = read_masterkey()
+def decryptContent(cipherList, k):
+    master_key = k
     AES = AESCipher(master_key)
 
     decryptList = []
