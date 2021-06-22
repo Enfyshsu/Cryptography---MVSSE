@@ -3,12 +3,12 @@ from .setup_1 import *
 
 def decrypt_Hdrbar(G, Hdrbar, I, gi, dI, b, S):
     C0, C1 = Hdrbar
-    numerator = G.pair_prod(gi[I], C1)
+    numerator = G.pair_prod(gi[I]["element"], C1)
     tmp = dI
     cnt = 1
     for j in S:
         if j != I:
-            tmp = tmp * gi[b+1-j+I]
+            tmp = tmp * gi[b+1-j+I]["element"]
     denominator = G.pair_prod(tmp, C0)
     return numerator / denominator
 
