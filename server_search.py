@@ -1,15 +1,13 @@
 from lib.json_function import read_json, write_json
 
 def main():
-    Id = input("User id: ")
-
     Index_path = "Index.json"
     Index = read_json(Index_path, is_G=True)
     
     Cipher_path = "Cipher.json"
     Cipher = read_json(Cipher_path, is_binary=True)
 
-    query_path = "user%s_query" % (Id)
+    query_path = "user_query"
     query = read_json(query_path, is_G=True)
 
     label = query['label']
