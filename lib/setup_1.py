@@ -44,8 +44,8 @@ def calculate_t_K_Hdr(G, g, p, b, gi, s, S):
     while int(t) >= int(p) or int(t) < 2**128 :
         t = secrets.randbits(int(p).bit_length())
    
-    K = G.pair_prod(gi[b+1], g) 
-    K2 = G.pair_prod(gi[b], gi[1])
+    K = G.pair_prod(gi[b+1], g) ** t 
+    K2 = G.pair_prod(gi[b], gi[1]) ** t
     assert K == K2, "pairing property" 
 
     c0 = g ** t
