@@ -1,5 +1,7 @@
 from lib.json_function import read_json, write_json
+from lib.rsaAccumulator import setup, cipher_to_prime_list, label_index_to_prime_list, accumulate
 from bitstring import BitArray
+
 
 def main():
     Index_path = "Index.json"
@@ -14,6 +16,7 @@ def main():
     label = query['label']
     pad = query['pad']
     #print("label is ", label)
+    pi_list = []
     rev_doc_id = []
     for i in Index:
         #print(type(i["label"]))
@@ -25,7 +28,11 @@ def main():
             for i in range(len(index)):
                 if index[i] == '1':
                     rev_doc_id.append(i)
+                else:
+                    pi_list.append(i)
 
+    # compute_pi(pi_list, Cipher)
+    print("pilist",pi_list)
     rev_doc = []
     print("Result contains docment id, ", rev_doc_id)
     for i in rev_doc_id:    

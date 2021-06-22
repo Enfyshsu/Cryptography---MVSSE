@@ -3,7 +3,7 @@ import hmac
 from bitstring import BitArray
 from .prime import gen_large_prime, gen_two_large_prime, is_prime
 from .generator import generators
-from .json_function import read_json
+from .json_function import read_json, write_json
 from .encrypt_document import encryptContent
 import time
 import random
@@ -38,6 +38,44 @@ def setup(prime_size=RSA_PRIME_SIZE, n=None, g=None):
     
     return n, g
 
+def compute_acc(data, cipher_list):
+    # Set up RSA accumulator
+    n, g = setup()
+
+    # Compute A_c
+    cipher_prime_list = cipher_to_prime_list(cipher_list)
+    A_c = accumulate(cipher_prime_list, g, n)
+
+    # Compute A_i
+    label_index = read_json("./Index.json", is_G=True)
+    label_index_prime_list = label_index_to_prime_list(label_index, len(data))
+    A_i = accumulate(label_index_prime_list, g, n)
+
+    acc = dict({"A_c": A_c, "A_i": A_i})
+    acc_path = "user_acc"
+    write_json(acc_path, acc, is_G=True)
+
+def compute_pi(pi_list, cipher_list):
+    pi_cipher_list = []
+    for i in pi_list:    
+        pi_cipher_list.append(cipher_list[i])
+    
+    # Set up RSA accumulator
+    n, g = setup()
+
+    # Compute Pi_c
+    cipher_prime_list = cipher_to_prime_list(pi_cipher_list)
+    Pi_c = accumulate(cipher_prime_list, g, n)
+
+    # Compute Pi_i
+    # label_index = read_json("./Index.json", is_G=True)
+    # label_index_prime_list = label_index_to_prime_list(label_index, len(data))
+    # Pi_i = accumulate(label_index_prime_list, g, n)
+
+    Pi = dict({"Pi_c": Pi_c})
+    Pi_path = "server_pi"
+    write_json(Pi_path, Pi, is_G=True)
+
 def cipher_to_prime(cipher):
     # Hash (i, C_i) to a prime number, for example (3, "This is cipher") -> 31
     
@@ -63,7 +101,7 @@ def label_index_to_prime_list(l_i_list, doc_length):
         for k in range(0, doc_length):
             index_bar = l['index_bar'][k]
             prime, nonce= _hash_to_prime(_hash(label=label, k=k, m=index_bar))
-            #prime = _hash_to_prime(random.randint(1, 10000000))
+            # prime = _hash(label=label, k=k, m=index_bar)
             rev.append(prime)
     return rev
 
@@ -71,7 +109,7 @@ def accumulate(primeList, v, N):
     # Given a list of prime number, calculator its accumulating value module N
     
     for prime in primeList:
-        print(v, prime, N)
+        # print(v, prime, N)
         v = pow(v, prime, N)
     return v
 
@@ -183,13 +221,16 @@ def _test_cipher():
     print(n, g)
     # cipher_prime_list = cipher_to_prime_list(cipher)
     label_index = read_json("./Index.json", is_G=True)
+    print("Now to hash prime")
     label_index_prime_list = label_index_to_prime_list(label_index, len(data))
     # Ac = accumulate(cipher_prime_list, g, n)
-    #print("Now to accumulate")
-    #Ai = accumulate(label_index_prime_list, g, n)
-
+    print("Now to accumulate")
+    t1 = time.time()
+    Ai = accumulate(label_index_prime_list, g, n)
+    t2 = time.time()
     # print(Ac)
-    #print(Ai)
+    print(t2-t1, "sec")
+    print(Ai)
     '''
     l = len(cipher)
     for _ in range(5):

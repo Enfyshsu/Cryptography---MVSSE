@@ -122,6 +122,9 @@ def owner_store(K, k1, k2, k3, ke):
     # Build the Index matrix
     build_Index(data, keyword_list, K, k1, k2, k3)
 
+    # Compute Accumulator value (A_c, A_i)
+    rsaAccumulator.compute_acc(data, cipher_list)
+
     #cipher_list = None
     #cipher_list = read_json(CIPHERTEXT_PATH, is_binary=True)
     
