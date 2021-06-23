@@ -108,28 +108,36 @@ def owner_setup():
     for u in S:
         write_json("./user%s_info.json" % (to_user[u]["id"]), to_user[u], is_G=True)
 
-    return K, k1, k2, k3, ke
+    return K, k1, k2, k3, ke, v, n
 
-def owner_store(K, k1, k2, k3, ke):
+def owner_store(K, k1, k2, k3, ke, v, n):
     # Read the documents and keywords list
-    data = read_json(DOCUMENT_PATH)
+    doc_list = read_json(DOCUMENT_PATH)
     keyword_list = read_json(KEYWORD_PATH)
 
     # Encrypt the documents and write to file system
-    cipher_list = encryptContent(data, ke)
+    cipher_list = encryptContent(doc_list, ke)
     write_json(CIPHERTEXT_PATH, cipher_list, is_binary=True)
 
     # Build the Index matrix
-    build_Index(data, keyword_list, K, k1, k2, k3)
+    build_Index(doc_list, keyword_list, K, k1, k2, k3)
 
     # Compute Accumulator value (A_c, A_i)
-    rsaAccumulator.compute_acc(data, cipher_list)
-
+    A_c, A_i, A_c_nonce, A_i_nonce = rsaAccumulator.compute_acc(doc_list, cipher_list, v, n)
+    print("AC is ", A_c)
+    print("AI is ", A_i)
     #cipher_list = None
     #cipher_list = read_json(CIPHERTEXT_PATH, is_binary=True)
     
     #decrypt_data = decryptContent(cipher_list, ke)
 
+    Accu = dict({"A_c": A_c, "A_i": A_i})
+    Accu_path = "Accu.json"
+    write_json(Accu_path, Accu)
+    
+    nonce_path = "Accu_nonce"
+    Accu_nonce = dict({"A_c_nonce": A_c_nonce, "A_i_nonce": A_i_nonce})
+    write_json(nonce_path, Accu_nonce)
 
     '''
     for d in decrypt_data:
@@ -140,8 +148,8 @@ def owner_store(K, k1, k2, k3, ke):
     '''
 
 def main():
-    K, k1, k2, k3, ke = owner_setup()
-    owner_store(K, k1, k2, k3, ke)
+    K, k1, k2, k3, ke, v, n = owner_setup()
+    owner_store(K, k1, k2, k3, ke, v, n)
 
 if __name__ == "__main__":
     main()           

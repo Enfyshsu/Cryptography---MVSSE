@@ -10,7 +10,7 @@ def main():
     token_path = "user_token"
     token = int(open(token_path, "r").read().strip())
     r = prf3(k3, token)
-    print(r)
+    #print(r)
 
     c0 = data["Hdr"][0]
     c1 = data["Hdr"][1]
