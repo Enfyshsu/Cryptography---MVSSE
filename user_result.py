@@ -1,7 +1,14 @@
-from lib.json_function import read_json
+from lib.json_function import write_json, read_json
 from lib.rsaAccumulator import cipher_to_prime_list, accumulate, cipher_to_prime, _hash, _hash_to_prime
+from lib.encrypt_document import decryptContent
+import sys
 
 def main():
+    if len (sys.argv) != 2 :
+        print("Usage: python user_result <User ID>")
+        sys.exit (1)
+    Id = str(sys.argv[1])
+
     result_path = "result.json"
     result = read_json(result_path, is_binary=True)
     
@@ -13,12 +20,15 @@ def main():
 
     query_path  = "user_query"
     query = read_json(query_path, is_G=True)
+    
+    user_info_path = "user%s_info.json" % (Id)
+    user_info = read_json(user_info_path)
 
     pad = query['pad']
     label = query['label']
     cipher = result['rev_cipher']
     N = public_info['N']
-    
+    ke = user_info['ke'] 
     
     # Verigy A_c
     A_c = int(accu["A_c"])
@@ -29,6 +39,7 @@ def main():
     _A_c = accumulate(cipher_prime_list, pi_c, N)
     if _A_c != A_c:
         print("Invalid completeness")
+        sys.exit(0)
 
     
     
@@ -48,8 +59,14 @@ def main():
     
     #print(l_index_prime_list)
     _A_i = accumulate(l_index_prime_list, pi_i, N)
-    print(_A_i)
-    print(A_i)
+    if _A_i != A_i:
+        print("Invalid correctness")
+        sys.exit(0)
+
+    # Decrypt search result
+
+    doc_list = decryptContent(cipher, ke)
+    write_json("search_result.json", doc_list)
 
 if __name__ == '__main__':
     main()

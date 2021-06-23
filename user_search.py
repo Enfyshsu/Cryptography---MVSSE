@@ -1,13 +1,17 @@
 from lib.HdrRelated import decrypt_Hdrbar
 from lib.json_function import read_json, write_json
-
 from charm.toolbox.pairinggroup import PairingGroup,ZR,G1,G2,GT,pair
+import sys
 
 b = 20
 S = [1, 2, 3, 4, 5, 6]
 
 def main():
-    Id = input("User id: ")
+    if len (sys.argv) != 2 :
+        print("Usage: python user_search.py <User ID>")
+        sys.exit (1)
+
+    Id = sys.argv[1]
     data_path = "user%s_info.json" % (Id)
     data = read_json(data_path, is_G=True)
 
