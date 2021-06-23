@@ -20,7 +20,7 @@ v =
 '''
 SAFE_PRIME_P = 3897905084791485435679018241725955863839264880076276641438166361665067393589461636507194799807972292904524315477069113706553182713061050518933782432177067
 SAFE_PRIME_Q = 606223194186276537666306594388855936281143220688229008170872654528545826992040969384414188105471643244737173125502614496393070063279978450512383976343603
-LAMBDA = 64
+LAMBDA = 128
 RSA_PRIME_SIZE = 512
 G = PairingGroup('SS512')
 G_element = G.random(G1)
@@ -38,48 +38,63 @@ def setup(prime_size=RSA_PRIME_SIZE, n=None, g=None):
     
     return n, g
 
-def compute_acc(data, cipher_list):
+def compute_acc(data, cipher_list, g, n):
     # Set up RSA accumulator
-    n, g = setup()
-
+    #n, g = setup()
+    
     # Compute A_c
-    cipher_prime_list = cipher_to_prime_list(cipher_list)
+    cipher_prime_list, A_c_nonce = cipher_to_prime_list(cipher_list)
     A_c = accumulate(cipher_prime_list, g, n)
 
     # Compute A_i
     label_index = read_json("./Index.json", is_G=True)
-    label_index_prime_list = label_index_to_prime_list(label_index, len(data))
+    label_index_prime_list, A_i_nonce = label_index_to_prime_list(label_index, len(data))
     A_i = accumulate(label_index_prime_list, g, n)
 
-    acc = dict({"A_c": A_c, "A_i": A_i})
-    acc_path = "user_acc"
-    write_json(acc_path, acc, is_G=True)
+    #acc = dict({"A_c": A_c, "A_i": A_i})
+    #acc_path = "user_acc"
+    #write_json(acc_path, acc, is_G=True)
+    return A_c, A_i, A_c_nonce, A_i_nonce
 
-def compute_pi(pi_list, cipher_list):
-    pi_cipher_list = []
-    for i in pi_list:    
-        pi_cipher_list.append(cipher_list[i])
+def compute_pi(v, n, cipher_list, Index, l_ID, index, nonce):
+   
+    A_c_nonce = nonce['A_c_nonce']
+    A_i_nonce = nonce['A_i_nonce']
+    doc_length = len(cipher_list)
+    #print("doc_length is ", doc_length)
     
-    # Set up RSA accumulator
-    n, g = setup()
+    # Compute pi_c
+    cipher_prime_list = []
+    for c in cipher_list:
+        Id = int(c['id'])
+        #print("Id", Id)
+        if index[Id] == '0':
+            cipher_prime_list.append(cipher_to_prime(c, nonce=int(A_c_nonce[Id])))
 
-    # Compute Pi_c
-    cipher_prime_list = cipher_to_prime_list(pi_cipher_list)
-    Pi_c = accumulate(cipher_prime_list, g, n)
-
+    pi_c = accumulate(cipher_prime_list, v, n)
+    
     # Compute Pi_i
     # label_index = read_json("./Index.json", is_G=True)
     # label_index_prime_list = label_index_to_prime_list(label_index, len(data))
     # Pi_i = accumulate(label_index_prime_list, g, n)
+    label_index_prime_list = []
+    for l in Index:
+        #print(l['id'])
+        if l['id'] == l_ID:
+            continue
+        label = l['label']
+        for k in range(doc_length):
+            ind = l['index_bar'][k]
+            prime, nonce= _hash_to_prime(_hash(label=label, k=k, m=ind), nonce=A_i_nonce[int(l['id']) * doc_length + k])
+            label_index_prime_list.append(prime)
 
-    Pi = dict({"Pi_c": Pi_c})
-    Pi_path = "server_pi"
-    write_json(Pi_path, Pi, is_G=True)
+    pi_i = accumulate(label_index_prime_list, v, n)
+    return pi_c, pi_i
 
-def cipher_to_prime(cipher):
+def cipher_to_prime(cipher, nonce=0):
     # Hash (i, C_i) to a prime number, for example (3, "This is cipher") -> 31
     
-    prime, nonce= _hash_to_prime(_hash(k=cipher['id'], m=_hash(m=cipher['ciphertext'])))
+    prime, nonce= _hash_to_prime(_hash(k=cipher['id'], m=_hash(m=cipher['ciphertext'])), nonce=nonce)
     return prime
 
 def cipher_to_prime_list(cipher_list):
@@ -87,15 +102,18 @@ def cipher_to_prime_list(cipher_list):
     
     #print(cipher_list)
     rev = []
+    nonce_list = []
     for cipher in cipher_list:
         prime, nonce= _hash_to_prime(_hash(k=cipher['id'], m=_hash(m=cipher['ciphertext'])))
         rev.append(prime)
-    return rev
+        nonce_list.append(nonce)
+    return rev, nonce_list
 
 def label_index_to_prime_list(l_i_list, doc_length):
     # Hash a label_index to a list of prime number
 
     rev = []
+    nonce_list = []
     for l in l_i_list:
         label = l['label']
         for k in range(0, doc_length):
@@ -103,13 +121,13 @@ def label_index_to_prime_list(l_i_list, doc_length):
             prime, nonce= _hash_to_prime(_hash(label=label, k=k, m=index_bar))
             # prime = _hash(label=label, k=k, m=index_bar)
             rev.append(prime)
-    return rev
+            nonce_list.append(nonce)
+    return rev, nonce_list
 
 def accumulate(primeList, v, N):
     # Given a list of prime number, calculator its accumulating value module N
     
     for prime in primeList:
-        # print(v, prime, N)
         v = pow(v, prime, N)
     return v
 
@@ -136,7 +154,8 @@ def _hash_to_length(x, bit_length):
     
     return int(bin(int(H, 16))[:bit_length], 2)
 
-def _hash_to_prime(x, bit_length=3*LAMBDA, nonce=0):
+def _hash_to_prime(x, bit_length=LAMBDA, nonce=0):
+    #print("nonce is ", nonce)
     # Hash integer x into a prime number of length 3 * LAMBDA, where LAMBDA is a secure parameter
     # Note that there might be some 0s in the head of return value, 
     # so its bit length will be a little smaller than 3 * LAMBDA
@@ -145,6 +164,7 @@ def _hash_to_prime(x, bit_length=3*LAMBDA, nonce=0):
         num = _hash_to_length(x+nonce, bit_length)
         if is_prime(num) == True:
             return num, nonce
+        #print("Tty again")
         nonce += 1
     return hashlib.md5(m.encode('utf-8')).hexdigest()
 

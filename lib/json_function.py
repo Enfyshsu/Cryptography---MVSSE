@@ -10,9 +10,14 @@ def read_json(file_name, is_binary=False, is_G=False):
     with open(file_name) as f:
         data = json.load(f)
         if is_binary:
-            for d in data:
-                if "ciphertext" in d.keys():
-                    d["ciphertext"] = d["ciphertext"].encode()
+            if type(data) == list:
+                for d in data:
+                    if "ciphertext" in d.keys():
+                        d["ciphertext"] = d["ciphertext"].encode()
+            elif type(data) == dict:
+                if "rev_cipher" in data.keys():
+                    for c in data['rev_cipher']:
+                        c['ciphertext'] = c['ciphertext'].encode()
         if is_G:
             if type(data) == dict:
                 if "gi" in data.keys():
