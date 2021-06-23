@@ -25,6 +25,20 @@ RSA_PRIME_SIZE = 512
 G = PairingGroup('SS512')
 G_element = G.random(G1)
 
+def list_multiply(x_list):
+    if len(x_list) == 0:
+        return 1
+    while(len(x_list) > 1):
+        for i in range(len(x_list) >> 1):
+            x_list[i] = x_list[i] * x_list[-i-1]
+        if len(x_list) & 1 == 0:
+            x_list = x_list[:(len(x_list)>>1)]
+        else:
+            x_list = x_list[:(len(x_list)>>1)+1]
+   
+    assert len(x_list) == 1
+    return x_list[0]
+
 def setup(prime_size=RSA_PRIME_SIZE, n=None, g=None):
     # Setup for RSA accumulator.
     # For owner purpose, it is necessary to randomly generate two primes, q and p, to compute n = q * p. Next generate a 
@@ -126,9 +140,12 @@ def label_index_to_prime_list(l_i_list, doc_length):
 
 def accumulate(primeList, v, N):
     # Given a list of prime number, calculator its accumulating value module N
-    
+    '''
     for prime in primeList:
         v = pow(v, prime, N)
+    '''
+    x = list_multiply(primeList)
+    v = pow(v, x, N)
     return v
 
 def verify(piJ, j, accE, N):
