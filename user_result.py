@@ -37,6 +37,7 @@ def main():
     cipher_prime_list, nonce = cipher_to_prime_list(cipher)
 
     _A_c = accumulate(cipher_prime_list, pi_c, N)
+    
     if _A_c != A_c:
         print("Invalid completeness")
         sys.exit(0)
@@ -66,7 +67,7 @@ def main():
     # Decrypt search result
 
     doc_list = decryptContent(cipher, ke)
-    write_json("search_result.json", doc_list)
+    write_json("searching_result.json", doc_list)
 
 if __name__ == '__main__':
     main()

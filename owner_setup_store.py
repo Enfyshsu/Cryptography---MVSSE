@@ -68,11 +68,12 @@ def owner_setup():
     t, K, Hdr = calculate_t_K_Hdr(G, g, p, b, gi, s, S)
   
     # Set up RSA accumulator
-    n, v = rsaAccumulator.setup()
+    n, v, _p, _q = rsaAccumulator.setup()
 
     to_public = {}  # Information that will be public
     to_user = []    # Information that will to sent to users
     to_server = {}  # Information that will be sent to server
+    to_owner = {} # Information that will remained in owner-side
 
     # Key generation
     k1, k2, k3, k4, ke = gen_key_pair() 
@@ -108,6 +109,13 @@ def owner_setup():
     for u in S:
         write_json("./user%s_info.json" % (to_user[u]["id"]), to_user[u], is_G=True)
 
+    # Remain information in owner-side
+    to_owner['ke'] = ke
+    to_owner['N'] = n
+    to_owner['q'] = _q
+    to_owner['p'] = _p
+    write_json("./owner_info.json", to_owner)
+    
     return K, k1, k2, k3, ke, v, n
 
 def owner_store(K, k1, k2, k3, ke, v, n):
@@ -124,8 +132,8 @@ def owner_store(K, k1, k2, k3, ke, v, n):
 
     # Compute Accumulator value (A_c, A_i)
     A_c, A_i, A_c_nonce, A_i_nonce = rsaAccumulator.compute_acc(doc_list, cipher_list, v, n)
-    print("AC is ", A_c)
-    print("AI is ", A_i)
+    #print("AC is ", A_c)
+    #print("AI is ", A_i)
     #cipher_list = None
     #cipher_list = read_json(CIPHERTEXT_PATH, is_binary=True)
     
