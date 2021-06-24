@@ -50,7 +50,7 @@ def setup(prime_size=RSA_PRIME_SIZE, n=None, g=None):
         n = q * p
         g = secrets.randbelow(n)
     
-    return n, g
+    return n, g, p, q
 
 def compute_acc(data, cipher_list, g, n):
     # Set up RSA accumulator
