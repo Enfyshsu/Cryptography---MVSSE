@@ -10,6 +10,7 @@ CIPHERTEXT_PATH = "./Cipher.json"
 OWNER_INFO_PATH = "./owner_info.json"
 ACCU_PATH = "Accu.json"
 INDEX_PATH = "./Index.json"
+NONCE_PATH = "Accu_nonce"
 
 # Reference: https://www.techiedelight.com/extended-euclidean-algorithm-implementation/
 def egcd(a, b):
@@ -27,6 +28,7 @@ def modify(document_id, new_content):
     doc_length = len(cipher)
     accu = read_json(ACCU_PATH)
     Index = read_json(INDEX_PATH, is_G=True)
+    nonce = read_json(NONCE_PATH)
 
     ke = owner_info['ke']
     k2 = owner_info['k2']
@@ -35,6 +37,8 @@ def modify(document_id, new_content):
     p = owner_info['p']
     A_c = accu["A_c"]
     A_i = accu["A_i"]
+    A_c_nonce = nonce['A_c_nonce']
+    A_i_nonce = nonce['A_i_nonce']
     new_keywords = []
 
     # Find new keyword list
@@ -53,7 +57,10 @@ def modify(document_id, new_content):
     phi_n = (q-1) * (p-1)
     for i in range(len(cipher)):
         if int(cipher[i]["id"]) == int(document_id):
-            X = cipher_to_prime(cipher[i]) 
+            #X = cipher_to_prime(cipher[i]) 
+            print("nonce is ", A_c_nonce[document_id])
+            X, A_c_nonce[document_id] = _hash_to_prime(_hash(k=cipher[i]['id'], m=_hash(m=cipher[i]['ciphertext'])), nonce=A_c_nonce[document_id])
+            print("nonce is ", A_c_nonce[document_id])
             gcd, inverse_X, _ = egcd(X, phi_n)
             assert gcd == 1
             inverse_X %= phi_n
@@ -63,7 +70,9 @@ def modify(document_id, new_content):
             new_cipher = {}
             new_cipher["id"] = new_doc["id"]
             new_cipher['ciphertext'] = AES.encrypt(new_doc['content'])
-            _X = cipher_to_prime(new_cipher)
+            #_X = cipher_to_prime(new_cipher)
+            _X, A_c_nonce[document_id] = _hash_to_prime(_hash(k=new_cipher['id'], m=_hash(m=new_cipher['ciphertext'])))
+            print("nonce is ", A_c_nonce[document_id])
             d = _X * inverse_X
             _A_c = accumulate([d], A_c, n)
 
@@ -98,14 +107,15 @@ def modify(document_id, new_content):
                 new_index_id = pad_id ^ 0
             #print(new_index_id)
             if new_index_id != index_bar_id:
-                Y, nonce= _hash_to_prime(_hash(label=label, k=document_id, m=index_bar_id))
+                nonce_id = cnt * doc_length + document_id
+                Y, A_i_nonce[nonce_id] = _hash_to_prime(_hash(label=label, k=document_id, m=index_bar_id), nonce=A_i_nonce[nonce_id])
                 #print(cnt, document_id, index_bar_id)
                 #print(Y)
                 gcd, inverse_Y, _ = egcd(Y, phi_n)
                 assert gcd == 1
                 inverse_Y %= phi_n
                 
-                _Y, nonce= _hash_to_prime(_hash(label=label, k=document_id, m=new_index_id))
+                _Y, A_i_nonce[nonce_id] = _hash_to_prime(_hash(label=label, k=document_id, m=new_index_id))
                 #print(_Y)
                 d = _Y * inverse_Y
                 A_i = accumulate([d], A_i, n)
@@ -121,12 +131,15 @@ def modify(document_id, new_content):
             cnt += 1
            
     accu['A_i'] = A_i
+    nonce["A_c_nonce"] = A_c_nonce
+    nonce["A_i_nonce"] = A_i_nonce 
     
     
     #cipher = encryptContent(data, ke)
     write_json(CIPHERTEXT_PATH, cipher, is_binary=True)
     write_json(ACCU_PATH, accu)
     write_json(INDEX_PATH, Index, is_G=True)
+    write_json(NONCE_PATH, nonce)
 
 
 def main():
