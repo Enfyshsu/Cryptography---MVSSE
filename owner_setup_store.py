@@ -111,6 +111,7 @@ def owner_setup():
 
     # Remain information in owner-side
     to_owner['ke'] = ke
+    to_owner['k2'] = k2
     to_owner['N'] = n
     to_owner['q'] = _q
     to_owner['p'] = _p
