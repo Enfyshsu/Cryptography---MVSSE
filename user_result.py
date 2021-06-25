@@ -29,6 +29,13 @@ def main():
     cipher = result['rev_cipher']
     N = public_info['N']
     ke = user_info['ke'] 
+
+    # Output ans
+    ans_list = []
+    for c in cipher:
+        ans_list.append(c['id'])
+
+    print("Searching result is ", ans_list)    
     
     # Verigy A_c
     A_c = int(accu["A_c"])
