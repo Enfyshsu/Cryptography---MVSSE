@@ -94,6 +94,7 @@ def compute_pi(v, n, cipher_list, Index, l_ID, index, nonce):
     # label_index_prime_list = label_index_to_prime_list(label_index, len(data))
     # Pi_i = accumulate(label_index_prime_list, g, n)
     label_index_prime_list = []
+    #print("doc length is ", doc_length)
     for l in Index:
         #print(l['id'])
         if l['id'] == l_ID:
@@ -102,6 +103,7 @@ def compute_pi(v, n, cipher_list, Index, l_ID, index, nonce):
         for k in range(doc_length):
             ind = l['index_bar'][k]
             prime, nonce= _hash_to_prime(_hash(label=label, k=k, m=ind), nonce=A_i_nonce[int(l['id']) * doc_length + k])
+            assert nonce == A_i_nonce[int(l['id']) * doc_length + k]
             label_index_prime_list.append(prime)
 
     pi_i = accumulate(label_index_prime_list, v, n)
