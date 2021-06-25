@@ -25,11 +25,14 @@ def main():
     data_path = "user%s_info.json" % (Id)
     data = read_json(data_path, is_G=True)
 
+    public_info = read_json("public_info.json", is_G=True)
+    doc_length = public_info['doc_length']
+
     l = str(w1) + str(w2)
     k1 = data["k1"]
     k2 = data["k2"]
     token = prf1(k1, l)
-    pad = BitArray(hex=prf2(k2, l)).bin
+    pad = BitArray(hex=prf2(k2, l)).bin[:doc_length]
     
     token_path = "user_token"
     with open(token_path, "w") as f:

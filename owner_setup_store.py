@@ -139,7 +139,7 @@ def owner_store(K, k1, k2, k3, ke, v, n):
     #cipher_list = read_json(CIPHERTEXT_PATH, is_binary=True)
     
     #decrypt_data = decryptContent(cipher_list, ke)
-
+    
     Accu = dict({"A_c": A_c, "A_i": A_i})
     Accu_path = "Accu.json"
     write_json(Accu_path, Accu)
@@ -147,6 +147,10 @@ def owner_store(K, k1, k2, k3, ke, v, n):
     nonce_path = "Accu_nonce"
     Accu_nonce = dict({"A_c_nonce": A_c_nonce, "A_i_nonce": A_i_nonce})
     write_json(nonce_path, Accu_nonce)
+    
+    public_info = read_json("./public_info.json", is_G=True)
+    public_info['doc_length'] = len(doc_list)
+    write_json("./public_info.json", public_info, is_G=True)
 
     '''
     for d in decrypt_data:

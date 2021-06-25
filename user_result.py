@@ -54,7 +54,7 @@ def main():
     # Verift A_i
     A_i = int(accu["A_i"])
     pi_i = int(result['pi_i'])
-    pad = pad[:245]
+    pad = pad[:246]
     
     ans_id = []
     for c in cipher:
