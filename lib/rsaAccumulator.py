@@ -84,6 +84,8 @@ def compute_pi(v, n, cipher_list, Index, l_ID, index, nonce):
         #print("Id", Id)
         if index[Id] == '0':
             cipher_prime_list.append(cipher_to_prime(c, nonce=int(A_c_nonce[Id])))
+        #else:
+        #    print("Id is ", Id)
 
     pi_c = accumulate(cipher_prime_list, v, n)
     
