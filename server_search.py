@@ -2,12 +2,14 @@ from lib.json_function import read_json, write_json
 from lib.rsaAccumulator import setup, cipher_to_prime_list, label_index_to_prime_list, accumulate, compute_pi
 from bitstring import BitArray
 
+INDEX_PATH = "./server/Index.json"
+CIPHER_PATH = "./server/Cipher.json"
 
 def main():
-    Index_path = "Index.json"
+    Index_path = INDEX_PATH
     Index = read_json(Index_path, is_G=True)
     
-    Cipher_path = "Cipher.json"
+    Cipher_path = CIPHER_PATH
     Cipher = read_json(Cipher_path, is_binary=True)
 
     query_path = "user_query"

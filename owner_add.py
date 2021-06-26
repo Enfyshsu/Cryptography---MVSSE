@@ -5,12 +5,12 @@ from lib.aesCipher import AESCipher
 from lib.prf import prf2
 from bitstring import BitArray
 
-KEYWORD_PATH = "keyword_list.json"
-CIPHERTEXT_PATH = "./Cipher.json"
-INDEX_PATH = "./Index.json"
-OWNER_INFO_PATH = "./owner_info.json"
-ACCU_PATH = "Accu.json"
-NONCE_PATH = "Accu_nonce"
+KEYWORD_PATH = "./owner/keyword_list.json"
+CIPHERTEXT_PATH = "./server/Cipher.json"
+INDEX_PATH = "./server/Index.json"
+OWNER_INFO_PATH = "./owner/owner_info.json"
+ACCU_PATH = "./Accu.json"
+NONCE_PATH = "./Accu_nonce"
 PUBLIC_INFO_PATH = "./public_info.json"
 
 def add(new_content):

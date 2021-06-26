@@ -5,11 +5,11 @@ from lib.aesCipher import AESCipher
 from lib.prf import prf2
 from bitstring import BitArray
 
-KEYWORD_PATH = "keyword_list.json"
-CIPHERTEXT_PATH = "./Cipher.json"
-OWNER_INFO_PATH = "./owner_info.json"
+KEYWORD_PATH = "./owner/keyword_list.json"
+CIPHERTEXT_PATH = "./server/Cipher.json"
+OWNER_INFO_PATH = "./owner/owner_info.json"
 ACCU_PATH = "Accu.json"
-INDEX_PATH = "./Index.json"
+INDEX_PATH = "./server/Index.json"
 NONCE_PATH = "Accu_nonce"
 
 # Reference: https://www.techiedelight.com/extended-euclidean-algorithm-implementation/
@@ -58,9 +58,7 @@ def modify(document_id, new_content):
     for i in range(len(cipher)):
         if int(cipher[i]["id"]) == int(document_id):
             #X = cipher_to_prime(cipher[i]) 
-            print("nonce is ", A_c_nonce[document_id])
             X, A_c_nonce[document_id] = _hash_to_prime(_hash(k=cipher[i]['id'], m=_hash(m=cipher[i]['ciphertext'])), nonce=A_c_nonce[document_id])
-            print("nonce is ", A_c_nonce[document_id])
             gcd, inverse_X, _ = egcd(X, phi_n)
             assert gcd == 1
             inverse_X %= phi_n
@@ -72,7 +70,7 @@ def modify(document_id, new_content):
             new_cipher['ciphertext'] = AES.encrypt(new_doc['content'])
             #_X = cipher_to_prime(new_cipher)
             _X, A_c_nonce[document_id] = _hash_to_prime(_hash(k=new_cipher['id'], m=_hash(m=new_cipher['ciphertext'])))
-            print("nonce is ", A_c_nonce[document_id])
+            #print("nonce is ", A_c_nonce[document_id])
             d = _X * inverse_X
             _A_c = accumulate([d], A_c, n)
 

@@ -1,10 +1,12 @@
 from lib.HdrRelated import decrypt_Hdrbar
 from lib.json_function import read_json, write_json
 from charm.toolbox.pairinggroup import PairingGroup,ZR,G1,G2,GT,pair
-import sys
+import sys, os
 
 b = 20
 S = [1, 2, 3, 4, 5, 6]
+
+
 
 def main():
     if len (sys.argv) != 2 :
@@ -12,7 +14,9 @@ def main():
         sys.exit (1)
 
     Id = sys.argv[1]
-    data_path = "user%s_info.json" % (Id)
+    USER_DIR = "./users/user%s" % (Id)
+    USER_PATH = "user%s_info.json" % (Id)
+    data_path = os.path.join(USER_DIR, USER_PATH)
     data = read_json(data_path, is_G=True)
 
     public_path = "public_info.json"

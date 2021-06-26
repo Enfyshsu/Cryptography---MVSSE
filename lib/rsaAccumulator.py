@@ -52,7 +52,7 @@ def setup(prime_size=RSA_PRIME_SIZE, n=None, g=None):
     
     return n, g, p, q
 
-def compute_acc(data, cipher_list, g, n):
+def compute_acc(data, cipher_list, label_index, g, n):
     # Set up RSA accumulator
     #n, g = setup()
     
@@ -61,7 +61,7 @@ def compute_acc(data, cipher_list, g, n):
     A_c = accumulate(cipher_prime_list, g, n)
 
     # Compute A_i
-    label_index = read_json("./Index.json", is_G=True)
+    #label_index = read_json("./Index.json", is_G=True)
     label_index_prime_list, A_i_nonce = label_index_to_prime_list(label_index, len(data))
     A_i = accumulate(label_index_prime_list, g, n)
 

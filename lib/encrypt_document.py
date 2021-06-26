@@ -3,7 +3,7 @@ from .json_function import read_json
 import hashlib
 # from Crypto.Hash import MD5
 
-KEY_PATH = "./masterkey"
+KEY_PATH = "./owner/masterkey"
 
 def read_masterkey(key_path=KEY_PATH):
     master_key = open(key_path).read().strip()

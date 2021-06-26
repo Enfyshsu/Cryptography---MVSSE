@@ -4,7 +4,7 @@ from lib.json_function import read_json, write_json
 
 
 def main():
-    data = read_json("server_info.json", is_G=True)
+    data = read_json("./server/server_info.json", is_G=True)
     k3 = data["k3"]
     
     token_path = "user_token"

@@ -7,11 +7,18 @@ from lib.prf import prf1, prf2, prf3
 from charm.toolbox.pairinggroup import PairingGroup,ZR,G1,G2,GT,pair
 
 from bitstring import BitArray
+import os
 
-DOCUMENT_PATH = "./Document.json"
-KEYWORD_PATH = "keyword_list.json"
-CIPHERTEXT_PATH = "./Cipher.json"
-MASTER_KEY_PATH = "./masterkey"
+# owner data
+DOCUMENT_PATH = "./owner/Document.json"
+KEYWORD_PATH = "./owner/keyword_list.json"
+MASTER_KEY_PATH = "./owner/masterkey"
+
+# server data
+CIPHERTEXT_PATH = "./server/Cipher.json"
+INDEX_PATH = "./server/Index.json"
+
+# user data
 
 b = 20 # Maxinum number of users
 S = [1, 2, 3, 4, 5, 6] # Number of current users
@@ -56,7 +63,8 @@ def build_Index(doc_list, keyword_list, K, k1, k2, k3):
                                 }))
             cnt += 1
 
-    write_json("Index.json", Index, is_G=True)            
+    write_json(INDEX_PATH, Index, is_G=True)            
+    return Index
 
 def owner_setup():
 
@@ -105,9 +113,14 @@ def owner_setup():
 
     # Write to file system
     write_json("./public_info.json", to_public, is_G=True)
-    write_json("./server_info.json", to_server, is_G=True)
+    write_json("./server/server_info.json", to_server, is_G=True)
     for u in S:
-        write_json("./user%s_info.json" % (to_user[u]["id"]), to_user[u], is_G=True)
+        USER_DIR = "./users/user%s" % (to_user[u]["id"])
+        USER_INFO = "user%s_info.json" % (to_user[u]["id"])
+        if not os.path.exists(USER_DIR):
+            os.makedirs(USER_DIR)
+        
+        write_json(os.path.join(USER_DIR, USER_INFO), to_user[u], is_G=True)
 
     # Remain information in owner-side
     to_owner['ke'] = ke
@@ -115,7 +128,7 @@ def owner_setup():
     to_owner['N'] = n
     to_owner['q'] = _q
     to_owner['p'] = _p
-    write_json("./owner_info.json", to_owner)
+    write_json("./owner/owner_info.json", to_owner)
     
     return K, k1, k2, k3, ke, v, n
 
@@ -129,10 +142,10 @@ def owner_store(K, k1, k2, k3, ke, v, n):
     write_json(CIPHERTEXT_PATH, cipher_list, is_binary=True)
 
     # Build the Index matrix
-    build_Index(doc_list, keyword_list, K, k1, k2, k3)
+    Index = build_Index(doc_list, keyword_list, K, k1, k2, k3)
 
     # Compute Accumulator value (A_c, A_i)
-    A_c, A_i, A_c_nonce, A_i_nonce = rsaAccumulator.compute_acc(doc_list, cipher_list, v, n)
+    A_c, A_i, A_c_nonce, A_i_nonce = rsaAccumulator.compute_acc(doc_list, cipher_list, Index, v, n)
     #print("AC is ", A_c)
     #print("AI is ", A_i)
     #cipher_list = None

@@ -15,3 +15,7 @@ Cipher.json
 
 *_info.json
 Index.json
+
+owner/masterkey
+server/*
+users/*

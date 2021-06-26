@@ -1,7 +1,9 @@
 from lib.prf import prf1, prf2
 from lib.json_function import read_json, write_json
 from bitstring import BitArray
-import sys
+import sys, os
+
+PUBLIC_INFO_PATH = "./public_info.json"
 
 def main():
     if len (sys.argv) != 4:
@@ -22,10 +24,12 @@ def main():
         w1 = w2
         w2 = tmp
 
-    data_path = "user%s_info.json" % (Id)
+    USER_DIR = "./users/user%s" % ((Id))
+    USER_INFO = "user%s_info.json" % (Id)
+    data_path = os.path.join(USER_DIR, USER_INFO)
     data = read_json(data_path, is_G=True)
 
-    public_info = read_json("public_info.json", is_G=True)
+    public_info = read_json(PUBLIC_INFO_PATH, is_G=True)
     doc_length = public_info['doc_length']
 
     l = str(w1) + str(w2)

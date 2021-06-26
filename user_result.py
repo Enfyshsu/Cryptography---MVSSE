@@ -1,7 +1,7 @@
 from lib.json_function import write_json, read_json
 from lib.rsaAccumulator import cipher_to_prime_list, accumulate, cipher_to_prime, _hash, _hash_to_prime
 from lib.encrypt_document import decryptContent
-import sys
+import sys, os
 
 def main():
     if len (sys.argv) != 2 :
@@ -21,7 +21,9 @@ def main():
     query_path  = "user_query"
     query = read_json(query_path, is_G=True)
     
-    user_info_path = "user%s_info.json" % (Id)
+    USER_DIR = "users/user%s" % (Id)
+    USER_INFO = "user%s_info.json" % (Id)
+    user_info_path = os.path.join(USER_DIR, USER_INFO)
     user_info = read_json(user_info_path)
 
     pad = query['pad']
@@ -74,7 +76,8 @@ def main():
     # Decrypt search result
 
     doc_list = decryptContent(cipher, ke)
-    write_json("searching_result.json", doc_list)
+    SEARCHING_RESULT = "searching_result.json"
+    write_json(os.path.join(USER_DIR, SEARCHING_RESULT), doc_list)
 
 if __name__ == '__main__':
     main()
