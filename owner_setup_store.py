@@ -176,6 +176,7 @@ def owner_store(K, k1, k2, k3, ke, v, n):
 def main():
     K, k1, k2, k3, ke, v, n = owner_setup()
     owner_store(K, k1, k2, k3, ke, v, n)
+    print("Finish setting up and storing")
 
 if __name__ == "__main__":
     main()           
