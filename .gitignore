@@ -19,3 +19,12 @@ Index.json
 owner/masterkey
 server/*
 users/*
+
+
+Accu.json
+Accu_nonce
+result.json
+server_reply
+user_pad
+user_query
+user_token

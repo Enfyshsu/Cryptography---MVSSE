@@ -26,14 +26,11 @@ def main():
     v = public_info['v']
     label = query['label']
     pad = query['pad']
-    #print("label is ", label)
     rev_doc_id = []
     index = BitArray(len(pad)).bin
     l_ID = -1
     for i in Index:
-        #print(type(i["label"]))
         if i["label"] == label:
-            #print(i)
             index_bar = i['index_bar']
             doc_length = len(index_bar)
             index = (BitArray(bin=index_bar) ^ BitArray(bin=pad[:doc_length])).bin

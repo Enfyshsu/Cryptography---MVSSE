@@ -1,5 +1,4 @@
 from lib.json_function import read_json, write_json
-from lib.encrypt_document import decryptContent, encryptContent
 from lib.rsaAccumulator import cipher_to_prime, _hash, _hash_to_prime, accumulate #, accumulate, cipher_to_prime_list
 from lib.aesCipher import AESCipher
 from lib.prf import prf2
@@ -14,9 +13,6 @@ NONCE_PATH = "./Accu_nonce"
 PUBLIC_INFO_PATH = "./public_info.json"
 
 def add(new_content):
-    #print(new_content)
-    #print(len(new_content))
-    #data = read_json(DOCUMENT_PATH)
     keyword = read_json(KEYWORD_PATH)
     owner_info = read_json(OWNER_INFO_PATH)
     cipher = read_json(CIPHERTEXT_PATH, is_binary=True)
@@ -27,7 +23,7 @@ def add(new_content):
 
     ke = owner_info['ke']
     n = owner_info['N']
-    k2 = owner_info['k2'] # need modify
+    k2 = owner_info['k2']
     A_c = accu["A_c"]
     A_i = accu["A_i"]
     A_c_nonce = nonce['A_c_nonce']
@@ -38,8 +34,6 @@ def add(new_content):
     for w in keyword:
         if w in new_content:
             new_keywords.append(w)
-
-    #print(new_keywords)
 
     # Build new document
     new_doc = {}
@@ -77,7 +71,6 @@ def add(new_content):
             prime_list.append(prime)
             cnt += 1
     
-    #print(prime_list)
     accu["A_i"] = accumulate(prime_list, A_i, n)
 
     # Compute A_c
@@ -101,15 +94,7 @@ def add(new_content):
 def main():
     new_content = input("Please enter the content of new document: ").strip()
 
-    add(new_content)
-
-    # A_C = read_json("./Accu.json")["A_c"]
-    # prime_list, nonce = cipher_to_prime_list(cipher)
-    # public_info = read_json("./public_info.json", is_G=True)
-    # _A_C = accumulate(prime_list, public_info['v'], public_info['N'])
-    # print(_A_C)
-    # print(A_C)
-    
+    add(new_content)    
 
 if __name__ == "__main__":
     main()

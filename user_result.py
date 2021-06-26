@@ -53,10 +53,9 @@ def main():
 
     
     
-    # Verift A_i
+    # Verify A_i
     A_i = int(accu["A_i"])
     pi_i = int(result['pi_i'])
-    pad = pad[:246]
     
     ans_id = []
     for c in cipher:
@@ -67,7 +66,6 @@ def main():
         prime, nonce= _hash_to_prime(_hash(label=label, k=j, m=(k^int(pad[j]))))
         l_index_prime_list.append(prime)
     
-    #print(l_index_prime_list)
     _A_i = accumulate(l_index_prime_list, pi_i, N)
     if _A_i != A_i:
         print("Invalid correctness")
