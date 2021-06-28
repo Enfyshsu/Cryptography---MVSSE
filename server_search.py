@@ -1,7 +1,7 @@
 from lib.json_function import read_json, write_json
 from lib.rsaAccumulator import setup, cipher_to_prime_list, label_index_to_prime_list, accumulate, compute_pi
 from bitstring import BitArray
-import os
+import os, sys
 
 INDEX_PATH = "./server/Index.json"
 CIPHER_PATH = "./server/Cipher.json"
@@ -42,7 +42,7 @@ def main():
     
     if l_ID == -1:
         print("Invalid label or no result")
-        os.exit(0)
+        sys.exit(0)
 
     # compute_pi(pi_list, Cipher)
     rev_doc = []

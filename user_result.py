@@ -10,8 +10,11 @@ def main():
     Id = str(sys.argv[1])
 
     result_path = "result.json"
-    result = read_json(result_path, is_binary=True)
-    
+    try:
+        result = read_json(result_path, is_binary=True)
+    except:
+        print("No result from server.")
+        sys.exit(0)
     accu_path = "Accu.json"
     accu = read_json(accu_path)
     
@@ -37,7 +40,7 @@ def main():
     for c in cipher:
         ans_list.append(c['id'])
 
-    print("Searching result is ", ans_list)    
+    #print("Searching result is ", ans_list)    
     
     # Verigy A_c
     A_c = int(accu["A_c"])
